@@ -16,7 +16,7 @@
 👤 **Paulo Braga de Assis Junior**
 
 * Website: https://paulobragajr.github.io/junior-braga/
-* Twitter: [@juninhork](https://twitter.com/paulobraga_jr)
-* Github: [@juninhork](https://github.com/paulobraga_jr)
+* Twitter: [@paulobragajr](https://twitter.com/paulobraga_jr)
+* Github: [@paulobragajr](https://github.com/paulobraga_jr)
 * LinkedIn: https://www.linkedin.com/in/paulo-braga-junior-0ab54a101/
 
