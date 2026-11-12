@@ -1,0 +1,152 @@
+{
+  "profile": {
+    "name": "Paulo Braga Junior",
+    "initials": "PB",
+    "role": "Mobile Software Engineer",
+    "currentCompany": "PicPay",
+    "statusBadge": "Mobile Software Engineer @ PicPay",
+    "heroTitlePrefix": "Construindo produtos móveis nativos com",
+    "heroTitleHighlight": "arquitetura de alta escala",
+    "heroSubtitle": "Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas Android (Kotlin) e iOS (Swift). Atualmente focado em performance, confiabilidade transacional e arquiteturas modulares no PicPay.",
+    "contact": {
+      "email": "junior.braga.dev@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/paulobragajunior/",
+      "github": "https://github.com/paulobragajr"
+    }
+  },
+  "metrics": [
+    { "value": "10+", "label": "Anos no Ecossistema Tech", "isHighlight": false },
+    { "value": "Fintech", "label": "Sistemas de Alta Escala", "isHighlight": true },
+    { "value": "Dual-Stack", "label": "Android (Kotlin) & iOS (Swift)", "isHighlight": false },
+    { "value": "Modern UI", "label": "Compose & SwiftUI", "isHighlight": false }
+  ],
+  "engineeringPillars": {
+    "tag": "Engenharia de Software",
+    "title": "Arquitetura além de simples telas",
+    "description": "Em aplicações corporativas com milhões de usuários ativos, o código precisa ser desenhado para manutenção sustentável, builds rápidos e resiliência a falhas.",
+    "items": [
+      {
+        "icon": "boxes",
+        "title": "Modularização Real",
+        "description": "Separação em múltiplos módulos (Core, Design System, Features desacopladas) para garantir build cache agressivo, isolamento de domínio e trabalho paralelo sem atrito."
+      },
+      {
+        "icon": "gauge",
+        "title": "Performance & Profiling",
+        "description": "Monitoramento de frame drops (garantindo 60/120 fps constantes), otimização de Cold/Warm Startup time, consumo eficiente de memória e mitigação de memory leaks."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Fintech & Confiabilidade",
+        "description": "Proteção contra vulnerabilidades mobile, sanitização de dados sensíveis, fluxos offline-first com sincronização resiliente e idempotência de transações."
+      }
+    ]
+  },
+  "stacks": [
+    {
+      "title": "Android Nativo",
+      "subtitle": "Ecossistema moderno Google",
+      "icon": "smartphone",
+      "color": "emerald",
+      "items": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Coroutines & Flow",
+        "Clean Architecture",
+        "MVI / MVVM",
+        "Hilt / Koin",
+        "Navigation Component",
+        "Room Database"
+      ]
+    },
+    {
+      "title": "iOS Nativo",
+      "subtitle": "Ecossistema moderno Apple",
+      "icon": "tablet",
+      "color": "teal",
+      "items": [
+        "Swift",
+        "SwiftUI",
+        "Combine",
+        "Async/Await",
+        "Clean Swift / MVVM-C",
+        "Swift Package Manager (SPM)",
+        "XCTest"
+      ]
+    },
+    {
+      "title": "Multiplataforma & Compartilhamento",
+      "subtitle": "Produtividade com integridade nativa",
+      "icon": "cpu",
+      "color": "cyan",
+      "items": [
+        "Kotlin Multiplatform (KMP)",
+        "Compose Multiplatform",
+        "React Native",
+        "Shared Business Logic"
+      ]
+    },
+    {
+      "title": "Qualidade & CI/CD Mobile",
+      "subtitle": "Esteiras automáticas de entrega contínua",
+      "icon": "git-branch",
+      "color": "emerald",
+      "items": [
+        "GitHub Actions",
+        "Fastlane",
+        "Detekt / Ktlint",
+        "SwiftLint",
+        "Snapshot Testing",
+        "Firebase App Distribution"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "role": "Mobile Software Engineer",
+      "company": "PicPay",
+      "segment": "Ecossistema Financeiro / Fintech",
+      "period": "Atual",
+      "current": true,
+      "description": "Desenvolvimento e evolução de serviços financeiros móveis com alta volumetria de transações diárias. Foco em arquiteturas sustentáveis, testes automatizados, resiliência de rede e segurança de dados críticos."
+    },
+    {
+      "role": "Trajetória no Ecossistema de Software",
+      "company": "Evolução Contínua em Engenharia",
+      "segment": "Diversos Projetos & Desafios",
+      "period": "2015 – Presente",
+      "current": false,
+      "description": "Mais de uma década acompanhando as grandes transformações do desenvolvimento mobile: desde arquiteturas imperativas com XML e UIKit, até a consolidação das UIs declarativas e modernas com Jetpack Compose, SwiftUI e padrões unificados de engenharia."
+    }
+  ],
+  "projects": {
+    "tag": "Engenharia & Open Source",
+    "title": "Projetos & Lab Educativo",
+    "description": "Iniciativas focadas em compartilhar padrões de arquitetura de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
+    "items": [
+      {
+        "title": "KMP Architecture Lab",
+        "status": "Em Desenvolvimento",
+        "statusColor": "emerald",
+        "description": "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) com Kotlin Multiplatform."
+      },
+      {
+        "title": "Modular Android Starter",
+        "status": "Em Desenvolvimento",
+        "statusColor": "teal",
+        "description": "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna, linters e CI automatizado com GitHub Actions."
+      },
+      {
+        "title": "Design System Showcase",
+        "status": "Planejado",
+        "statusColor": "cyan",
+        "description": "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco em acessibilidade nativa."
+      }
+    ]
+  },
+  "footer": {
+    "ctaTitle": "Vamos conversar sobre tecnologia?",
+    "ctaSubtitle": "Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.",
+    "copyright": "© 2026 Paulo Braga Junior • Hospedado com GitHub Pages"
+  }
+}
