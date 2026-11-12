@@ -93,7 +93,7 @@
           Construindo produtos móveis nativos com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">arquitetura de alta escala</span>.
         </h1>
         <p id="hero-subtitle" class="text-lg sm:text-xl text-slate-400 leading-relaxed font-normal">
-          Carregando informações...
+          Carregando...
         </p>
       </div>
 
@@ -117,7 +117,6 @@
 
       <!-- Quick Metrics -->
       <div id="metrics-container" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/60">
-        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -132,7 +131,6 @@
       </p>
 
       <div id="pillars-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -144,7 +142,6 @@
       </div>
 
       <div id="stacks-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -156,7 +153,6 @@
       </div>
 
       <div id="experiences-container" class="relative border-l border-slate-800 pl-6 ml-3 space-y-10">
-        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -171,7 +167,6 @@
       </p>
 
       <div id="projects-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -207,24 +202,166 @@
 
   </main>
 
-  <!-- DATA-DRIVEN JAVASCRIPT ENGINE -->
   <script>
-    async function loadPortfolioData() {
-      try {
-        const response = await fetch('./data.json?v=' + Date.now());
-        if (!response.ok) throw new Error('Falha ao carregar data.json');
-        const data = await response.json();
-        renderPage(data);
-      } catch (error) {
-        console.error('Erro ao inicializar portfólio:', error);
-      }
+    // DADOS EMBUTIDOS DE INICIALIZACAO RAPIDA (ZERO LAYOUT SHIFT)
+    const INITIAL_DATA = {
+  "profile": {
+    "name": "Paulo Braga Junior",
+    "initials": "PB",
+    "role": "Mobile Software Engineer",
+    "currentCompany": "PicPay",
+    "statusBadge": "Mobile Software Engineer @ PicPay",
+    "heroTitlePrefix": "Construindo produtos móveis nativos com",
+    "heroTitleHighlight": "arquitetura de alta escala",
+    "heroSubtitle": "Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas Android (Kotlin) e iOS (Swift). Atualmente focado em performance, confiabilidade transacional e arquiteturas modulares no PicPay.",
+    "contact": {
+      "email": "junior.braga.dev@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/paulobragajunior/",
+      "github": "https://github.com/paulobragajr"
     }
+  },
+  "metrics": [
+    { "value": "10+", "label": "Anos no Ecossistema Tech", "isHighlight": false },
+    { "value": "Fintech", "label": "Sistemas de Alta Escala", "isHighlight": true },
+    { "value": "Dual-Stack", "label": "Android (Kotlin) & iOS (Swift)", "isHighlight": false },
+    { "value": "Modern UI", "label": "Compose & SwiftUI", "isHighlight": false }
+  ],
+  "engineeringPillars": {
+    "tag": "Engenharia de Software",
+    "title": "Arquitetura além de simples telas",
+    "description": "Em aplicações corporativas com milhões de usuários ativos, o código precisa ser desenhado para manutenção sustentável, builds rápidos e resiliência a falhas.",
+    "items": [
+      {
+        "icon": "boxes",
+        "title": "Modularização Real",
+        "description": "Separação em múltiplos módulos (Core, Design System, Features desacopladas) para garantir build cache agressivo, isolamento de domínio e trabalho paralelo sem atrito."
+      },
+      {
+        "icon": "gauge",
+        "title": "Performance & Profiling",
+        "description": "Monitoramento de frame drops (garantindo 60/120 fps constantes), otimização de Cold/Warm Startup time, consumo eficiente de memória e mitigação de memory leaks."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Fintech & Confiabilidade",
+        "description": "Proteção contra vulnerabilidades mobile, sanitização de dados sensíveis, fluxos offline-first com sincronização resiliente e idempotência de transações."
+      }
+    ]
+  },
+  "stacks": [
+    {
+      "title": "Android Nativo",
+      "subtitle": "Ecossistema moderno Google",
+      "icon": "smartphone",
+      "color": "emerald",
+      "items": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Coroutines & Flow",
+        "Clean Architecture",
+        "MVI / MVVM",
+        "Hilt / Koin",
+        "Navigation Component",
+        "Room Database"
+      ]
+    },
+    {
+      "title": "iOS Nativo",
+      "subtitle": "Ecossistema moderno Apple",
+      "icon": "tablet",
+      "color": "teal",
+      "items": [
+        "Swift",
+        "SwiftUI",
+        "Combine",
+        "Async/Await",
+        "Clean Swift / MVVM-C",
+        "Swift Package Manager (SPM)",
+        "XCTest"
+      ]
+    },
+    {
+      "title": "Multiplataforma & Compartilhamento",
+      "subtitle": "Produtividade com integridade nativa",
+      "icon": "cpu",
+      "color": "cyan",
+      "items": [
+        "Kotlin Multiplatform (KMP)",
+        "Compose Multiplatform",
+        "React Native",
+        "Shared Business Logic"
+      ]
+    },
+    {
+      "title": "Qualidade & CI/CD Mobile",
+      "subtitle": "Esteiras automáticas de entrega contínua",
+      "icon": "git-branch",
+      "color": "emerald",
+      "items": [
+        "GitHub Actions",
+        "Fastlane",
+        "Detekt / Ktlint",
+        "SwiftLint",
+        "Snapshot Testing",
+        "Firebase App Distribution"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "role": "Mobile Software Engineer",
+      "company": "PicPay",
+      "segment": "Ecossistema Financeiro / Fintech",
+      "period": "Atual",
+      "current": true,
+      "description": "Desenvolvimento e evolução de serviços financeiros móveis com alta volumetria de transações diárias. Foco em arquiteturas sustentáveis, testes automatizados, resiliência de rede e segurança de dados críticos."
+    },
+    {
+      "role": "Trajetória no Ecossistema de Software",
+      "company": "Evolução Contínua em Engenharia",
+      "segment": "Diversos Projetos & Desafios",
+      "period": "2015 – Presente",
+      "current": false,
+      "description": "Mais de uma década acompanhando as grandes transformações do desenvolvimento mobile: desde arquiteturas imperativas com XML e UIKit, até a consolidação das UIs declarativas e modernas com Jetpack Compose, SwiftUI e padrões unificados de engenharia."
+    }
+  ],
+  "projects": {
+    "tag": "Engenharia & Open Source",
+    "title": "Projetos & Lab Educativo",
+    "description": "Iniciativas focadas em compartilhar padrões de arquitetura de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
+    "items": [
+      {
+        "title": "KMP Architecture Lab",
+        "status": "Em Desenvolvimento",
+        "statusColor": "emerald",
+        "description": "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) com Kotlin Multiplatform."
+      },
+      {
+        "title": "Modular Android Starter",
+        "status": "Em Desenvolvimento",
+        "statusColor": "teal",
+        "description": "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna, linters e CI automatizado com GitHub Actions."
+      },
+      {
+        "title": "Design System Showcase",
+        "status": "Planejado",
+        "statusColor": "cyan",
+        "description": "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco em acessibilidade nativa."
+      }
+    ]
+  },
+  "footer": {
+    "ctaTitle": "Vamos conversar sobre tecnologia?",
+    "ctaSubtitle": "Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.",
+    "copyright": "© 2026 Paulo Braga Junior • Hospedado com GitHub Pages"
+  }
+};
 
     function renderPage(data) {
+      if (!data || !data.profile) return;
       const p = data.profile;
 
-      // Document title
-      document.title = `${p.name} — ${p.role}`;
+      document.title = "$"{p.name} — "$"{p.role}";
 
       // Navbar
       document.getElementById('nav-initials').textContent = p.initials;
@@ -233,107 +370,121 @@
 
       // Hero
       document.getElementById('hero-badge').textContent = p.statusBadge;
-      document.getElementById('hero-title').innerHTML = `
-        ${p.heroTitlePrefix} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">${p.heroTitleHighlight}</span>.
-      `;
+      document.getElementById('hero-title').innerHTML = 
+        $"{p.heroTitlePrefix} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">$"{p.heroTitleHighlight}</span>.
+      ;
       document.getElementById('hero-subtitle').textContent = p.heroSubtitle;
       document.getElementById('hero-cta-linkedin').href = p.contact.linkedin;
       document.getElementById('hero-cta-github').href = p.contact.github;
 
       // Metrics
       const metricsContainer = document.getElementById('metrics-container');
-      metricsContainer.innerHTML = data.metrics.map(m => `
+      metricsContainer.innerHTML = (data.metrics || []).map(m => 
         <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl font-bold ${m.isHighlight ? 'text-emerald-400' : 'text-white'}">${m.value}</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">${m.label}</div>
+          <div class="text-2xl font-bold "$"{m.isHighlight ? 'text-emerald-400' : 'text-white'}">"$"{m.value}</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">"$"{m.label}</div>
         </div>
-      `).join('');
+      ).join('');
 
       // Pillars
-      const ep = data.engineeringPillars;
-      document.getElementById('pillars-tag').textContent = ep.tag;
-      document.getElementById('pillars-title').textContent = ep.title;
-      document.getElementById('pillars-desc').textContent = ep.description;
+      const ep = data.engineeringPillars || {};
+      document.getElementById('pillars-tag').textContent = ep.tag || '';
+      document.getElementById('pillars-title').textContent = ep.title || '';
+      document.getElementById('pillars-desc').textContent = ep.description || '';
 
       const pillarsContainer = document.getElementById('pillars-container');
-      pillarsContainer.innerHTML = ep.items.map(pillar => `
+      pillarsContainer.innerHTML = (ep.items || []).map(pillar => 
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">
           <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-            <i data-lucide="${pillar.icon}" class="w-5 h-5"></i>
+            <i data-lucide="$"{pillar.icon}" class="w-5 h-5"></i>
           </div>
-          <h4 class="text-lg font-bold text-white">${pillar.title}</h4>
-          <p class="text-sm text-slate-400 leading-relaxed">${pillar.description}</p>
+          <h4 class="text-lg font-bold text-white">"$"{pillar.title}</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">"$"{pillar.description}</p>
         </div>
-      `).join('');
+      ).join('');
 
       // Stacks
       const stacksContainer = document.getElementById('stacks-container');
-      stacksContainer.innerHTML = data.stacks.map(st => `
+      stacksContainer.innerHTML = (data.stacks || []).map(st => 
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-${st.color}-500/10 flex items-center justify-center text-${st.color}-400">
-              <i data-lucide="${st.icon}" class="w-5 h-5"></i>
+            <div class="w-9 h-9 rounded-lg bg-$"{st.color}-500/10 flex items-center justify-center text-$"{st.color}-400">
+              <i data-lucide="$"{st.icon}" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white">${st.title}</h4>
-              <p class="text-xs text-slate-400">${st.subtitle}</p>
+              <h4 class="text-base font-bold text-white">"$"{st.title}</h4>
+              <p class="text-xs text-slate-400">"$"{st.subtitle}</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 pt-1">
-            ${st.items.map(item => `
-              <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">${item}</span>
-            `).join('')}
+            $"{st.items.map(item => <span class=\"px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono\">$"{item}</span>).join('')}
           </div>
         </div>
-      `).join('');
+      ).join('');
 
       // Experiences (Timeline)
       const expContainer = document.getElementById('experiences-container');
-      expContainer.innerHTML = data.experiences.map(exp => `
+      expContainer.innerHTML = (data.experiences || []).map(exp => 
         <div class="relative space-y-2">
-          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full ${exp.current ? 'bg-emerald-400' : 'bg-slate-700'} border-4 border-slate-950"></div>
+          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full "$"{exp.current ? 'bg-emerald-400' : 'bg-slate-700'} border-4 border-slate-950"></div>
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <h4 class="text-lg font-bold text-white">${exp.role}</h4>
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${exp.current ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-800/60 text-slate-400 font-mono'}">
-              ${exp.period}
+            <h4 class="text-lg font-bold text-white">"$"{exp.role}</h4>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full "$"{exp.current ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-800/60 text-slate-400 font-mono'}">
+              "$"{exp.period}
             </span>
           </div>
-          <div class="text-sm font-medium text-slate-400">${exp.company} • ${exp.segment}</div>
-          <p class="text-sm text-slate-300 leading-relaxed pt-1">${exp.description}</p>
+          <div class="text-sm font-medium text-slate-400">"$"{exp.company} • "$"{exp.segment}</div>
+          <p class="text-sm text-slate-300 leading-relaxed pt-1">"$"{exp.description}</p>
         </div>
-      `).join('');
+      ).join('');
 
       // Projects
-      const pr = data.projects;
-      document.getElementById('projects-tag').textContent = pr.tag;
-      document.getElementById('projects-title').textContent = pr.title;
-      document.getElementById('projects-desc').textContent = pr.description;
+      const pr = data.projects || {};
+      document.getElementById('projects-tag').textContent = pr.tag || '';
+      document.getElementById('projects-title').textContent = pr.title || '';
+      document.getElementById('projects-desc').textContent = pr.description || '';
 
       const projectsContainer = document.getElementById('projects-container');
-      projectsContainer.innerHTML = pr.items.map(item => `
+      projectsContainer.innerHTML = (pr.items || []).map(item => 
         <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">
-          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-${item.statusColor}-400 bg-${item.statusColor}-500/10 px-2 py-0.5 rounded">
-            <span>${item.status}</span>
+          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-$"{item.statusColor}-400 bg-$"{item.statusColor}-500/10 px-2 py-0.5 rounded">
+            <span>"$"{item.status}</span>
           </div>
-          <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">${item.title}</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">${item.description}</p>
+          <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">"$"{item.title}</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">"$"{item.description}</p>
         </div>
-      `).join('');
+      ).join('');
 
       // Footer
-      document.getElementById('footer-cta-title').textContent = data.footer.ctaTitle;
-      document.getElementById('footer-cta-subtitle').textContent = data.footer.ctaSubtitle;
+      const f = data.footer || {};
+      document.getElementById('footer-cta-title').textContent = f.ctaTitle || '';
+      document.getElementById('footer-cta-subtitle').textContent = f.ctaSubtitle || '';
       document.getElementById('footer-linkedin').href = p.contact.linkedin;
-      document.getElementById('footer-email').href = `mailto:${p.contact.email}`;
+      document.getElementById('footer-email').href = "mailto:$"{p.contact.email}";
       document.getElementById('footer-email-text').textContent = p.contact.email;
       document.getElementById('footer-github').href = p.contact.github;
-      document.getElementById('footer-copyright').textContent = data.footer.copyright;
+      document.getElementById('footer-copyright').textContent = f.copyright || '';
 
-      // Re-hydrate Lucide icons
       lucide.createIcons();
     }
 
-    document.addEventListener('DOMContentLoaded', loadPortfolioData);
+    async function init() {
+      // 1. Render inicial instantaneo (zero layout shift)
+      renderPage(INITIAL_DATA);
+
+      // 2. Fetch dinamico para puxar alteracoes do data.json em tempo real
+      try {
+        const res = await fetch('./data.json?v=' + Date.now());
+        if (res.ok) {
+          const liveData = await res.json();
+          renderPage(liveData);
+        }
+      } catch (err) {
+        console.log('Ambiente estatico/offline, mantendo dados iniciais');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
