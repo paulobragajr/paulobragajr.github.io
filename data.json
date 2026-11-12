@@ -1,192 +1,194 @@
 {
-    "profile":  {
-                    "name":  "Paulo Braga Junior",
-                    "initials":  "PB",
-                    "role":  "Dev Front Especialista | Mobile \u0026 Angular",
-                    "currentCompany":  "PicPay",
-                    "statusBadge":  "Dev Front Especialista @ PicPay",
-                    "heroTitlePrefix":  "Construindo produtos móveis nativos com",
-                    "heroTitleHighlight":  "arquitetura de alta escala",
-                    "heroSubtitle":  "Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas Android (Kotlin) e iOS (Swift). Atualmente focado em performance, confiabilidade transacional e arquiteturas modulares no PicPay.",
-                    "contact":  {
-                                    "email":  "junior.braga.dev@gmail.com",
-                                    "linkedin":  "https://www.linkedin.com/in/paulobragajunior/",
-                                    "github":  "https://github.com/paulobragajr"
-                                }
-                },
-    "metrics":  [
-                    {
-                        "value":  "10+",
-                        "label":  "Anos no Ecossistema Tech",
-                        "isHighlight":  false
-                    },
-                    {
-                        "value":  "Fintech",
-                        "label":  "Sistemas de Alta Escala",
-                        "isHighlight":  true
-                    },
-                    {
-                        "value":  "Dual-Stack",
-                        "label":  "Android (Kotlin) \u0026 iOS (Swift)",
-                        "isHighlight":  false
-                    },
-                    {
-                        "value":  "Modern UI",
-                        "label":  "Compose \u0026 SwiftUI",
-                        "isHighlight":  false
-                    }
-                ],
-    "engineeringPillars":  {
-                               "tag":  "Engenharia de Software",
-                               "title":  "Arquitetura além de simples telas",
-                               "description":  "Em aplicações corporativas com milhões de usuários ativos, o código precisa ser desenhado para manutenção sustentável, builds rápidos e resiliência a falhas.",
-                               "items":  [
-                                             {
-                                                 "icon":  "boxes",
-                                                 "title":  "Modularização Real",
-                                                 "description":  "Separação em múltiplos módulos (Core, Design System, Features desacopladas) para garantir build cache agressivo, isolamento de domínio e trabalho paralelo sem atrito."
-                                             },
-                                             {
-                                                 "icon":  "gauge",
-                                                 "title":  "Performance \u0026 Profiling",
-                                                 "description":  "Monitoramento de frame drops (garantindo 60/120 fps constantes), otimização de Cold/Warm Startup time, consumo eficiente de memória e mitigação de memory leaks."
-                                             },
-                                             {
-                                                 "icon":  "shield-check",
-                                                 "title":  "Fintech \u0026 Confiabilidade",
-                                                 "description":  "Proteção contra vulnerabilidades mobile, sanitização de dados sensíveis, fluxos offline-first com sincronização resiliente e idempotência de transações."
-                                             }
-                                         ]
-                           },
-    "stacks":  [
-                   {
-                       "title":  "Android Nativo",
-                       "subtitle":  "Ecossistema moderno Google",
-                       "icon":  "smartphone",
-                       "color":  "emerald",
-                       "items":  [
-                                     "Kotlin",
-                                     "Jetpack Compose",
-                                     "Coroutines \u0026 Flow",
-                                     "Clean Architecture",
-                                     "MVI / MVVM",
-                                     "Hilt / Koin",
-                                     "Navigation Component",
-                                     "Room Database"
-                                 ]
-                   },
-                   {
-                       "title":  "iOS Nativo",
-                       "subtitle":  "Ecossistema moderno Apple",
-                       "icon":  "tablet",
-                       "color":  "teal",
-                       "items":  [
-                                     "Swift",
-                                     "SwiftUI",
-                                     "Combine",
-                                     "Async/Await",
-                                     "Clean Swift / MVVM-C",
-                                     "Swift Package Manager (SPM)",
-                                     "XCTest"
-                                 ]
-                   },
-                   {
-                       "title":  "Multiplataforma \u0026 Compartilhamento",
-                       "subtitle":  "Produtividade com integridade nativa",
-                       "icon":  "cpu",
-                       "color":  "cyan",
-                       "items":  [
-                                     "Kotlin Multiplatform (KMP)",
-                                     "Compose Multiplatform",
-                                     "React Native",
-                                     "Shared Business Logic"
-                                 ]
-                   },
-                   {
-                       "title":  "Qualidade \u0026 CI/CD Mobile",
-                       "subtitle":  "Esteiras automáticas de entrega contínua",
-                       "icon":  "git-branch",
-                       "color":  "emerald",
-                       "items":  [
-                                     "GitHub Actions",
-                                     "Fastlane",
-                                     "Detekt / Ktlint",
-                                     "SwiftLint",
-                                     "Snapshot Testing",
-                                     "Firebase App Distribution"
-                                 ]
-                   }
-               ],
-    "experiences":  [
-                        {
-                            "role":  "Dev Front Especialista | Mobile \u0026 Angular",
-                            "company":  "PicPay",
-                            "segment":  "Fintech \u0026 Banking Varejo",
-                            "period":  "Jan de 2023 – Presente",
-                            "current":  true,
-                            "description":  "Desenvolvimento e auxílio técnico a desenvolvedores do time. Atuação direta na plataforma de atendimento dos clientes do banco e criação de integrações no aplicativo de varejo (PicPay: Cartão, Conta e Pix)."
-                        },
-                        {
-                            "role":  "Android Specialist / Mobile Specialist",
-                            "company":  "Banco Original",
-                            "segment":  "Banking Digital \u0026 Meios de Pagamento",
-                            "period":  "Set de 2021 – Abr de 2023",
-                            "current":  false,
-                            "description":  "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, criação de novas features, manutenção de código e monitoramento contínuo da aplicação."
-                        },
-                        {
-                            "role":  "Mobile Development Leader \u0026 Developer",
-                            "company":  "Stefanini Brasil",
-                            "segment":  "Consultoria Global em TI",
-                            "period":  "Set de 2018 – Set de 2021",
-                            "current":  false,
-                            "description":  "Liderança de projetos mobile com metodologias ágeis, acompanhamento e reporte de resultados a gerentes e clientes, facilitação e liderança técnica. Ampla atuação em implantação de arquitetura, revisão de código (Code Review), esteiras de CI/CD e desenvolvimento em Android (Kotlin/Java), iOS (Swift), React Native e Angular."
-                        },
-                        {
-                            "role":  "Mobile \u0026 Web Developer",
-                            "company":  "SpeedWay Tecnologia da Informação",
-                            "segment":  "Produtos Digitais \u0026 Consultoria",
-                            "period":  "Jan de 2017 – Set de 2018",
-                            "current":  false,
-                            "description":  "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java."
-                        },
-                        {
-                            "role":  "Mobile Developer",
-                            "company":  "Stefanini",
-                            "segment":  "Início da Trajetória Mobile",
-                            "period":  "Jul de 2015 – Jan de 2017",
-                            "current":  false,
-                            "description":  "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#)."
-                        }
-                    ],
-    "projects":  {
-                     "tag":  "Engenharia \u0026 Open Source",
-                     "title":  "Projetos \u0026 Lab Educativo",
-                     "description":  "Iniciativas focadas em compartilhar padrões de arquitetura de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
-                     "items":  [
-                                   {
-                                       "title":  "KMP Architecture Lab",
-                                       "status":  "Em Desenvolvimento",
-                                       "statusColor":  "emerald",
-                                       "description":  "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) com Kotlin Multiplatform."
-                                   },
-                                   {
-                                       "title":  "Modular Android Starter",
-                                       "status":  "Em Desenvolvimento",
-                                       "statusColor":  "teal",
-                                       "description":  "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna, linters e CI automatizado com GitHub Actions."
-                                   },
-                                   {
-                                       "title":  "Design System Showcase",
-                                       "status":  "Planejado",
-                                       "statusColor":  "cyan",
-                                       "description":  "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco em acessibilidade nativa."
-                                   }
-                               ]
-                 },
-    "footer":  {
-                   "ctaTitle":  "Vamos conversar sobre tecnologia?",
-                   "ctaSubtitle":  "Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.",
-                   "copyright":  "© 2026 Paulo Braga Junior • Hospedado com GitHub Pages"
-               }
+  "profile": {
+    "name": "Paulo Braga Junior",
+    "initials": "PB",
+    "role": "Dev Front Especialista | Mobile & Angular",
+    "currentCompany": "PicPay",
+    "statusBadge": "Dev Front Especialista @ PicPay",
+    "heroTitlePrefix": "Construindo produtos móveis nativos com",
+    "heroTitleHighlight": "arquitetura de alta escala",
+    "heroSubtitle": "Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas Android (Kotlin & Java), iOS (Swift) e Angular. Atuando diretamente em plataformas de alta escala e serviços bancários no PicPay.",
+    "contact": {
+      "email": "junior.braga.dev@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/paulobragajunior/",
+      "github": "https://github.com/paulobragajr"
+    }
+  },
+  "metrics": [
+    {
+      "value": "10+",
+      "label": "Anos no Ecossistema Tech",
+      "isHighlight": false
+    },
+    {
+      "value": "Fintech",
+      "label": "Sistemas de Alta Escala",
+      "isHighlight": true
+    },
+    {
+      "value": "Dual-Stack",
+      "label": "Android (Kotlin) & iOS (Swift)",
+      "isHighlight": false
+    },
+    {
+      "value": "Liderança",
+      "label": "Mentoria & Arquitetura",
+      "isHighlight": false
+    }
+  ],
+  "engineeringPillars": {
+    "tag": "Engenharia de Software",
+    "title": "Arquitetura além de simples telas",
+    "description": "Em aplicações corporativas com milhões de usuários ativos, o código precisa ser desenhado para manutenção sustentável, builds rápidos e resiliência a falhas.",
+    "items": [
+      {
+        "icon": "boxes",
+        "title": "Modularização Real",
+        "description": "Separação em múltiplos módulos (Core, Design System, Features desacopladas) para garantir build cache agressivo, isolamento de domínio e trabalho paralelo sem atrito."
+      },
+      {
+        "icon": "gauge",
+        "title": "Performance & Profiling",
+        "description": "Monitoramento de frame drops (garantindo 60/120 fps constantes), otimização de Cold/Warm Startup time, consumo eficiente de memória e mitigação de memory leaks."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Fintech & Confiabilidade",
+        "description": "Proteção contra vulnerabilidades mobile, sanitização de dados sensíveis, fluxos offline-first com sincronização resiliente e idempotência de transações."
+      }
+    ]
+  },
+  "stacks": [
+    {
+      "title": "Android Nativo",
+      "subtitle": "Ecossistema moderno Google",
+      "icon": "smartphone",
+      "color": "emerald",
+      "items": [
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Coroutines & Flow",
+        "Clean Architecture",
+        "MVI / MVVM",
+        "Hilt / Koin",
+        "Room Database"
+      ]
+    },
+    {
+      "title": "iOS Nativo",
+      "subtitle": "Ecossistema moderno Apple",
+      "icon": "tablet",
+      "color": "teal",
+      "items": [
+        "Swift",
+        "SwiftUI",
+        "Combine",
+        "Async/Await",
+        "Clean Swift / MVVM-C",
+        "Swift Package Manager (SPM)",
+        "XCTest"
+      ]
+    },
+    {
+      "title": "Frontend & Híbrido",
+      "subtitle": "Web corporativa e multiplataforma",
+      "icon": "cpu",
+      "color": "cyan",
+      "items": [
+        "Angular",
+        "AngularJS",
+        "TypeScript",
+        "React Native",
+        "Ionic Framework",
+        "HTML5 / SCSS"
+      ]
+    },
+    {
+      "title": "Liderança & DevOps Mobile",
+      "subtitle": "Esteiras de entrega contínua e qualidade",
+      "icon": "git-branch",
+      "color": "emerald",
+      "items": [
+        "Liderança Técnica",
+        "Code Review",
+        "CI / CD",
+        "Fastlane",
+        "GitHub Actions",
+        "Metodologias Ágeis"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "role": "Dev Front Especialista | Mobile & Angular",
+      "company": "PicPay",
+      "segment": "Fintech & Banking Varejo",
+      "period": "Jan de 2023 – Presente",
+      "current": true,
+      "description": "Desenvolvimento e auxílio técnico a desenvolvedores do time. Atuação direta na plataforma de atendimento dos clientes do banco e criação de integrações no aplicativo de varejo (PicPay: Cartão, Conta e Pix)."
+    },
+    {
+      "role": "Android Specialist / Mobile Specialist",
+      "company": "Banco Original",
+      "segment": "Banking Digital & Meios de Pagamento",
+      "period": "Set de 2021 – Abr de 2023",
+      "current": false,
+      "description": "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, criação de novas features, manutenção de código e monitoramento contínuo da aplicação."
+    },
+    {
+      "role": "Mobile Development Leader & Developer",
+      "company": "Stefanini Brasil",
+      "segment": "Consultoria Global em TI",
+      "period": "Set de 2018 – Set de 2021",
+      "current": false,
+      "description": "Liderança de projetos mobile com metodologias ágeis, acompanhamento e reporte de resultados a gerentes e clientes, facilitação e liderança técnica. Ampla atuação em implantação de arquitetura, revisão de código (Code Review), esteiras de CI/CD e desenvolvimento em Android (Kotlin/Java), iOS (Swift), React Native e Angular."
+    },
+    {
+      "role": "Mobile & Web Developer",
+      "company": "SpeedWay Tecnologia da Informação",
+      "segment": "Produtos Digitais & Consultoria",
+      "period": "Jan de 2017 – Set de 2018",
+      "current": false,
+      "description": "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java."
+    },
+    {
+      "role": "Mobile Developer",
+      "company": "Stefanini",
+      "segment": "Início da Trajetória Mobile",
+      "period": "Jul de 2015 – Jan de 2017",
+      "current": false,
+      "description": "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#)."
+    }
+  ],
+  "projects": {
+    "tag": "Engenharia & Open Source",
+    "title": "Projetos & Lab Educativo",
+    "description": "Iniciativas focadas em compartilhar padrões de arquitetura de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
+    "items": [
+      {
+        "title": "KMP Architecture Lab",
+        "status": "Em Desenvolvimento",
+        "statusColor": "emerald",
+        "description": "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) com Kotlin Multiplatform."
+      },
+      {
+        "title": "Modular Android Starter",
+        "status": "Em Desenvolvimento",
+        "statusColor": "teal",
+        "description": "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna, linters e CI automatizado com GitHub Actions."
+      },
+      {
+        "title": "Design System Showcase",
+        "status": "Planejado",
+        "statusColor": "cyan",
+        "description": "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco em acessibilidade nativa."
+      }
+    ]
+  },
+  "footer": {
+    "ctaTitle": "Vamos conversar sobre tecnologia?",
+    "ctaSubtitle": "Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.",
+    "copyright": "© 2026 Paulo Braga Junior • Hospedado com GitHub Pages"
+  }
 }
