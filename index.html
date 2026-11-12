@@ -7,7 +7,6 @@
   <meta name="description" content="Engenheiro de Software Mobile especialista em Android (Kotlin), iOS (Swift) e arquiteturas escaláveis. Atuando no PicPay.">
   <meta name="author" content="Paulo Braga Junior">
   
-  <!-- Open Graph -->
   <meta property="og:title" content="Paulo Braga Junior — Mobile Software Engineer">
   <meta property="og:description" content="Engenheiro de Software Mobile especialista em Android (Kotlin), iOS (Swift) e arquiteturas escaláveis.">
   <meta property="og:type" content="website">
@@ -42,23 +41,11 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    ::selection {
-      background: #10b981;
-      color: #ffffff;
-    }
+    ::selection { background: #10b981; color: #ffffff; }
     .glass {
       background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-    }
-    .light .glass {
-      background: rgba(255, 255, 255, 0.85);
-    }
-    .subtle-border {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .light .subtle-border {
-      border: 1px solid rgba(0, 0, 0, 0.08);
     }
   </style>
 </head>
@@ -68,10 +55,10 @@
   <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/60">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight text-white group">
-        <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+        <span id="nav-initials" class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
           PB
         </span>
-        <span>Paulo Braga</span>
+        <span id="nav-name">Paulo Braga</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
@@ -83,7 +70,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer" 
+        <a id="nav-linkedin" href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer" 
            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all">
           <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
           <span>LinkedIn</span>
@@ -95,24 +82,23 @@
   <main class="pt-28 pb-20 max-w-5xl mx-auto px-6 space-y-24">
 
     <!-- HERO SECTION -->
-    <section class="space-y-8 pt-4">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">
+    <section id="sobre" class="space-y-8 pt-4">
+      <div id="hero-badge-container" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>Mobile Software Engineer @ PicPay</span>
+        <span id="hero-badge">Mobile Software Engineer @ PicPay</span>
       </div>
 
       <div class="space-y-4 max-w-3xl">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
           Construindo produtos móveis nativos com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">arquitetura de alta escala</span>.
         </h1>
-        <p class="text-lg sm:text-xl text-slate-400 leading-relaxed font-normal">
-          Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas 
-          <strong class="text-slate-200">Android (Kotlin)</strong> e <strong class="text-slate-200">iOS (Swift)</strong>. Atualmente focado em performance, confiabilidade transacional e arquiteturas modulares no <strong class="text-emerald-400">PicPay</strong>.
+        <p id="hero-subtitle" class="text-lg sm:text-xl text-slate-400 leading-relaxed font-normal">
+          Carregando informações...
         </p>
       </div>
 
       <div class="flex flex-wrap items-center gap-4 pt-2">
-        <a href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer"
+        <a id="hero-cta-linkedin" href="#" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20">
           <i data-lucide="send" class="w-4 h-4"></i>
           <span>Conectar no LinkedIn</span>
@@ -122,7 +108,7 @@
           <i data-lucide="layers" class="w-4 h-4"></i>
           <span>Explorar Especialidades</span>
         </a>
-        <a href="https://github.com/paulobragajr" target="_blank" rel="noopener noreferrer"
+        <a id="hero-cta-github" href="#" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 text-slate-400 hover:text-white text-sm transition-all">
           <i data-lucide="github" class="w-4 h-4"></i>
           <span>GitHub</span>
@@ -130,66 +116,23 @@
       </div>
 
       <!-- Quick Metrics -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/60">
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl font-bold text-white">10+</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Anos no Ecossistema Tech</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl font-bold text-emerald-400">Fintech</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Sistemas de Alta Escala</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl font-bold text-white">Dual-Stack</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Android (Kotlin) & iOS (Swift)</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-2xl font-bold text-white">Modern UI</div>
-          <div class="text-xs text-slate-400 mt-1 font-medium">Compose & SwiftUI</div>
-        </div>
+      <div id="metrics-container" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/60">
+        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
     <!-- PILARES DE ENGENHARIA -->
     <section id="pilares" class="space-y-6 scroll-mt-24">
       <div class="space-y-1">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia de Software</h2>
-        <h3 class="text-2xl sm:text-3xl font-bold text-white">Arquitetura além de simples telas</h3>
+        <h2 id="pillars-tag" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia de Software</h2>
+        <h3 id="pillars-title" class="text-2xl sm:text-3xl font-bold text-white">Arquitetura além de simples telas</h3>
       </div>
-      <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
-        Em aplicações corporativas com milhões de usuários ativos, o código precisa ser desenhado para manutenção sustentável, builds rápidos e resiliência a falhas.
+      <p id="pillars-desc" class="text-slate-400 max-w-2xl text-sm sm:text-base">
+        Carregando...
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-            <i data-lucide="boxes" class="w-5 h-5"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white">Modularização Real</h4>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Separação em múltiplos módulos (Core, Design System, Features desacopladas) para garantir build cache agressivo, isolamento de domínio e trabalho paralelo sem atrito.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-            <i data-lucide="gauge" class="w-5 h-5"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white">Performance & Profiling</h4>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Monitoramento de frame drops (garantindo 60/120 fps constantes), otimização de Cold/Warm Startup time, consumo eficiente de memória e mitigação de memory leaks.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-            <i data-lucide="shield-check" class="w-5 h-5"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white">Fintech & Confiabilidade</h4>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Proteção contra vulnerabilidades mobile, sanitização de dados sensíveis, fluxos offline-first com sincronização resiliente e idempotência de transações.
-          </p>
-        </div>
+      <div id="pillars-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -200,91 +143,8 @@
         <h3 class="text-2xl sm:text-3xl font-bold text-white">Especialidades & Ferramentas</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-        <!-- Android -->
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-              <i data-lucide="smartphone" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-base font-bold text-white">Android Nativo</h4>
-              <p class="text-xs text-slate-400">Ecossistema moderno Google</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-1">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Kotlin</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Jetpack Compose</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Coroutines & Flow</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Clean Architecture</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">MVI / MVVM</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Hilt / Koin</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Navigation Component</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Room Database</span>
-          </div>
-        </div>
-
-        <!-- iOS -->
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
-              <i data-lucide="tablet" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-base font-bold text-white">iOS Nativo</h4>
-              <p class="text-xs text-slate-400">Ecossistema moderno Apple</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-1">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Swift</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">SwiftUI</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Combine</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Async/Await</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Clean Swift / MVVM-C</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Swift Package Manager (SPM)</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">XCTest</span>
-          </div>
-        </div>
-
-        <!-- Multiplataforma -->
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
-              <i data-lucide="cpu" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-base font-bold text-white">Multiplataforma & Compartilhamento</h4>
-              <p class="text-xs text-slate-400">Produtividade com integridade nativa</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-1">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Kotlin Multiplatform (KMP)</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Compose Multiplatform</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">React Native</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Shared Business Logic</span>
-          </div>
-        </div>
-
-        <!-- DevOps & Qualidade -->
-        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-              <i data-lucide="git-branch" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-base font-bold text-white">Qualidade & CI/CD Mobile</h4>
-              <p class="text-xs text-slate-400">Esteiras automáticas de entrega contínua</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-1">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">GitHub Actions</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Fastlane</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Detekt / Ktlint</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">SwiftLint</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Snapshot Testing</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">Firebase App Distribution</span>
-          </div>
-        </div>
+      <div id="stacks-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
@@ -295,112 +155,185 @@
         <h3 class="text-2xl sm:text-3xl font-bold text-white">Trajetória Profissional</h3>
       </div>
 
-      <div class="relative border-l border-slate-800 pl-6 ml-3 space-y-10">
-        <!-- PicPay -->
-        <div class="relative space-y-2">
-          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-4 border-slate-950"></div>
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h4 class="text-lg font-bold text-white">Mobile Software Engineer</h4>
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Atual</span>
-          </div>
-          <div class="text-sm font-medium text-slate-400">PicPay • Ecossistema Financeiro / Fintech</div>
-          <p class="text-sm text-slate-300 leading-relaxed pt-1">
-            Desenvolvimento e evolução de serviços financeiros móveis com alta volumetria de transações diárias. Foco em arquiteturas sustentáveis, testes automatizados, resiliência de rede e segurança de dados críticos.
-          </p>
-        </div>
-
-        <!-- Histórico Geral -->
-        <div class="relative space-y-2">
-          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-4 border-slate-950"></div>
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h4 class="text-lg font-bold text-white">Trajetória no Ecossistema de Software</h4>
-            <span class="text-xs text-slate-400 font-mono">2015 – Presente</span>
-          </div>
-          <div class="text-sm font-medium text-slate-400">Evolução Contínua em Engenharia</div>
-          <p class="text-sm text-slate-300 leading-relaxed pt-1">
-            Mais de uma década acompanhando as grandes transformações do desenvolvimento mobile: desde arquiteturas imperativas com XML e UIKit, até a consolidação das UIs declarativas e modernas com Jetpack Compose, SwiftUI e padrões unificados de engenharia.
-          </p>
-        </div>
+      <div id="experiences-container" class="relative border-l border-slate-800 pl-6 ml-3 space-y-10">
+        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
     <!-- LABORATÓRIO / PROJETOS EDUCATIVOS ROADMAP -->
     <section id="projetos" class="space-y-6 scroll-mt-24">
       <div class="space-y-1">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia & Open Source</h2>
-        <h3 class="text-2xl sm:text-3xl font-bold text-white">Projetos & Lab Educativo</h3>
+        <h2 id="projects-tag" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia & Open Source</h2>
+        <h3 id="projects-title" class="text-2xl sm:text-3xl font-bold text-white">Projetos & Lab Educativo</h3>
       </div>
-      <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
-        Iniciativas focadas em compartilhar padrões de arquitetura de produção, boas práticas de engenharia e soluções para problemas reais de escala.
+      <p id="projects-desc" class="text-slate-400 max-w-2xl text-sm sm:text-base">
+        Carregando...
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-        <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">
-          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-            <span>Em Desenvolvimento</span>
-          </div>
-          <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">KMP Architecture Lab</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) com Kotlin Multiplatform.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">
-          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded">
-            <span>Em Desenvolvimento</span>
-          </div>
-          <h4 class="text-base font-bold text-white group-hover:text-teal-400 transition-colors">Modular Android Starter</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna, linters e CI automatizado com GitHub Actions.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">
-          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">
-            <span>Planejado</span>
-          </div>
-          <h4 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">Design System Showcase</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco em acessibilidade nativa.
-          </p>
-        </div>
+      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <!-- Renderizado dinamicamente pelo data.json -->
       </div>
     </section>
 
     <!-- CONTATO & FOOTER -->
     <section class="pt-12 border-t border-slate-800/60 text-center space-y-6">
-      <h3 class="text-2xl font-bold text-white">Vamos conversar sobre tecnologia?</h3>
-      <p class="text-slate-400 text-sm max-w-md mx-auto">
+      <h3 id="footer-cta-title" class="text-2xl font-bold text-white">Vamos conversar sobre tecnologia?</h3>
+      <p id="footer-cta-subtitle" class="text-slate-400 text-sm max-w-md mx-auto">
         Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-        <a href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer"
+        <a id="footer-linkedin" href="#" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
           <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i>
           <span>LinkedIn</span>
         </a>
-        <a href="mailto:junior.braga.dev@gmail.com"
+        <a id="footer-email" href="#"
            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
           <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
-          <span>junior.braga.dev@gmail.com</span>
+          <span id="footer-email-text">E-mail</span>
         </a>
-        <a href="https://github.com/paulobragajr" target="_blank" rel="noopener noreferrer"
+        <a id="footer-github" href="#" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
           <i data-lucide="github" class="w-4 h-4 text-emerald-400"></i>
           <span>GitHub</span>
         </a>
       </div>
 
-      <div class="pt-12 text-xs text-slate-600">
+      <div id="footer-copyright" class="pt-12 text-xs text-slate-600">
         © 2026 Paulo Braga Junior • Hospedado com GitHub Pages
       </div>
     </section>
 
   </main>
 
+  <!-- DATA-DRIVEN JAVASCRIPT ENGINE -->
   <script>
-    lucide.createIcons();
+    async function loadPortfolioData() {
+      try {
+        const response = await fetch('./data.json?v=' + Date.now());
+        if (!response.ok) throw new Error('Falha ao carregar data.json');
+        const data = await response.json();
+        renderPage(data);
+      } catch (error) {
+        console.error('Erro ao inicializar portfólio:', error);
+      }
+    }
+
+    function renderPage(data) {
+      const p = data.profile;
+
+      // Document title
+      document.title = `${p.name} — ${p.role}`;
+
+      // Navbar
+      document.getElementById('nav-initials').textContent = p.initials;
+      document.getElementById('nav-name').textContent = p.name;
+      document.getElementById('nav-linkedin').href = p.contact.linkedin;
+
+      // Hero
+      document.getElementById('hero-badge').textContent = p.statusBadge;
+      document.getElementById('hero-title').innerHTML = `
+        ${p.heroTitlePrefix} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">${p.heroTitleHighlight}</span>.
+      `;
+      document.getElementById('hero-subtitle').textContent = p.heroSubtitle;
+      document.getElementById('hero-cta-linkedin').href = p.contact.linkedin;
+      document.getElementById('hero-cta-github').href = p.contact.github;
+
+      // Metrics
+      const metricsContainer = document.getElementById('metrics-container');
+      metricsContainer.innerHTML = data.metrics.map(m => `
+        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+          <div class="text-2xl font-bold ${m.isHighlight ? 'text-emerald-400' : 'text-white'}">${m.value}</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">${m.label}</div>
+        </div>
+      `).join('');
+
+      // Pillars
+      const ep = data.engineeringPillars;
+      document.getElementById('pillars-tag').textContent = ep.tag;
+      document.getElementById('pillars-title').textContent = ep.title;
+      document.getElementById('pillars-desc').textContent = ep.description;
+
+      const pillarsContainer = document.getElementById('pillars-container');
+      pillarsContainer.innerHTML = ep.items.map(pillar => `
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i data-lucide="${pillar.icon}" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white">${pillar.title}</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">${pillar.description}</p>
+        </div>
+      `).join('');
+
+      // Stacks
+      const stacksContainer = document.getElementById('stacks-container');
+      stacksContainer.innerHTML = data.stacks.map(st => `
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-${st.color}-500/10 flex items-center justify-center text-${st.color}-400">
+              <i data-lucide="${st.icon}" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">${st.title}</h4>
+              <p class="text-xs text-slate-400">${st.subtitle}</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-1">
+            ${st.items.map(item => `
+              <span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">${item}</span>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      // Experiences (Timeline)
+      const expContainer = document.getElementById('experiences-container');
+      expContainer.innerHTML = data.experiences.map(exp => `
+        <div class="relative space-y-2">
+          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full ${exp.current ? 'bg-emerald-400' : 'bg-slate-700'} border-4 border-slate-950"></div>
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h4 class="text-lg font-bold text-white">${exp.role}</h4>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${exp.current ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-800/60 text-slate-400 font-mono'}">
+              ${exp.period}
+            </span>
+          </div>
+          <div class="text-sm font-medium text-slate-400">${exp.company} • ${exp.segment}</div>
+          <p class="text-sm text-slate-300 leading-relaxed pt-1">${exp.description}</p>
+        </div>
+      `).join('');
+
+      // Projects
+      const pr = data.projects;
+      document.getElementById('projects-tag').textContent = pr.tag;
+      document.getElementById('projects-title').textContent = pr.title;
+      document.getElementById('projects-desc').textContent = pr.description;
+
+      const projectsContainer = document.getElementById('projects-container');
+      projectsContainer.innerHTML = pr.items.map(item => `
+        <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">
+          <div class="inline-flex items-center gap-1.5 text-xs font-medium text-${item.statusColor}-400 bg-${item.statusColor}-500/10 px-2 py-0.5 rounded">
+            <span>${item.status}</span>
+          </div>
+          <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">${item.title}</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">${item.description}</p>
+        </div>
+      `).join('');
+
+      // Footer
+      document.getElementById('footer-cta-title').textContent = data.footer.ctaTitle;
+      document.getElementById('footer-cta-subtitle').textContent = data.footer.ctaSubtitle;
+      document.getElementById('footer-linkedin').href = p.contact.linkedin;
+      document.getElementById('footer-email').href = `mailto:${p.contact.email}`;
+      document.getElementById('footer-email-text').textContent = p.contact.email;
+      document.getElementById('footer-github').href = p.contact.github;
+      document.getElementById('footer-copyright').textContent = data.footer.copyright;
+
+      // Re-hydrate Lucide icons
+      lucide.createIcons();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPortfolioData);
   </script>
 </body>
 </html>
