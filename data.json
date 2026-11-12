@@ -2,9 +2,9 @@
     "profile":  {
                     "name":  "Paulo Braga Junior",
                     "initials":  "PB",
-                    "role":  "Mobile Software Engineer",
+                    "role":  "Dev Front Especialista | Mobile \u0026 Angular",
                     "currentCompany":  "PicPay",
-                    "statusBadge":  "Mobile Software Engineer @ PicPay",
+                    "statusBadge":  "Dev Front Especialista @ PicPay",
                     "heroTitlePrefix":  "Construindo produtos móveis nativos com",
                     "heroTitleHighlight":  "arquitetura de alta escala",
                     "heroSubtitle":  "Mais de 10 anos no desenvolvimento de software, especialista nos ecossistemas Android (Kotlin) e iOS (Swift). Atualmente focado em performance, confiabilidade transacional e arquiteturas modulares no PicPay.",
@@ -119,44 +119,44 @@
                ],
     "experiences":  [
                         {
-                            "role":  "Mobile Software Engineer",
+                            "role":  "Dev Front Especialista | Mobile \u0026 Angular",
                             "company":  "PicPay",
-                            "segment":  "Ecossistema Financeiro / Fintech",
-                            "period":  "Atual",
+                            "segment":  "Fintech \u0026 Banking Varejo",
+                            "period":  "Jan de 2023 – Presente",
                             "current":  true,
-                            "description":  "Desenvolvimento e evolução de serviços financeiros móveis de alta escala com milhões de usuários ativos. Atuação em arquiteturas modulares, esteiras de CI/CD, testes automatizados e garantia de alta performance e resiliência transacional."
+                            "description":  "Desenvolvimento e auxílio técnico a desenvolvedores do time. Atuação direta na plataforma de atendimento dos clientes do banco e criação de integrações no aplicativo de varejo (PicPay: Cartão, Conta e Pix)."
                         },
                         {
-                            "role":  "Mobile Software Engineer",
+                            "role":  "Android Specialist / Mobile Specialist",
                             "company":  "Banco Original",
                             "segment":  "Banking Digital \u0026 Meios de Pagamento",
-                            "period":  "Experiência Anterior",
+                            "period":  "Set de 2021 – Abr de 2023",
                             "current":  false,
-                            "description":  "Atuação no aplicativo de um dos primeiros bancos 100% digitais do Brasil. Desenvolvimento de fluxos transacionais críticos, autenticação e segurança bancária, criptografia de ponta a ponta e integração com serviços de core banking."
+                            "description":  "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, criação de novas features, manutenção de código e monitoramento contínuo da aplicação."
                         },
                         {
-                            "role":  "Engenheiro de Software Mobile",
-                            "company":  "Stefanini",
-                            "segment":  "Consultoria Global de Tecnologia",
-                            "period":  "Experiência Anterior",
+                            "role":  "Mobile Development Leader \u0026 Developer",
+                            "company":  "Stefanini Brasil",
+                            "segment":  "Consultoria Global em TI",
+                            "period":  "Set de 2018 – Set de 2021",
                             "current":  false,
-                            "description":  "Desenvolvimento de soluções mobile corporativas para clientes de grande porte em ambiente ágil. Foco em arquitetura sustentável, refatoração de código, integração de APIs e entregas com qualidade e prazos precisos."
+                            "description":  "Liderança de projetos mobile com metodologias ágeis, acompanhamento e reporte de resultados a gerentes e clientes, facilitação e liderança técnica. Ampla atuação em implantação de arquitetura, revisão de código (Code Review), esteiras de CI/CD e desenvolvimento em Android (Kotlin/Java), iOS (Swift), React Native e Angular."
+                        },
+                        {
+                            "role":  "Mobile \u0026 Web Developer",
+                            "company":  "SpeedWay Tecnologia da Informação",
+                            "segment":  "Produtos Digitais \u0026 Consultoria",
+                            "period":  "Jan de 2017 – Set de 2018",
+                            "current":  false,
+                            "description":  "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java."
                         },
                         {
                             "role":  "Mobile Developer",
-                            "company":  "SpeedWay",
-                            "segment":  "Startup \u0026 Inovação",
-                            "period":  "Experiência Anterior",
+                            "company":  "Stefanini",
+                            "segment":  "Início da Trajetória Mobile",
+                            "period":  "Jul de 2015 – Jan de 2017",
                             "current":  false,
-                            "description":  "Construção de produtos móveis de ponta a ponta em ambiente dinâmico de startup. Ciclo completo de desenvolvimento: prototipagem rápida de MVPs, validação com usuários, integração com backend e publicação nas lojas de aplicativos."
-                        },
-                        {
-                            "role":  "Mais de 10 Anos no Ecossistema Tech",
-                            "company":  "Trajetória Consolidada em Engenharia",
-                            "segment":  "Evolução Contínua em Mobile \u0026 Sistemas",
-                            "period":  "2015 – Presente",
-                            "current":  false,
-                            "description":  "Sólida trajetória técnica acompanhando toda a evolução dos sistemas operacionais móveis: desde os primórdios do desenvolvimento mobile até a era das UIs declarativas e reativas com Kotlin/Jetpack Compose, Swift/SwiftUI e arquiteturas unificadas."
+                            "description":  "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#)."
                         }
                     ],
     "projects":  {
