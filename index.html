@@ -1,21 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo Braga Junior — Dev Front Especialista | Mobile & Angular</title>
-  <meta name="description" content="Dev Front Especialista | Mobile & Angular atuando no PicPay. Mais de 10 anos de experiência em Android, iOS e arquiteturas escaláveis.">
+  <meta name="description" content="Dev Front Especialista | Mobile & Angular atuando no PicPay. Mais de 10 anos de experiência em engenharia nativa Android (Kotlin), iOS (Swift) e arquiteturas escaláveis.">
   <meta name="author" content="Paulo Braga Junior">
   
   <meta property="og:title" content="Paulo Braga Junior — Dev Front Especialista">
-  <meta property="og:description" content="Especialista em Android, iOS e Frontend com passagens por PicPay, Banco Original e Stefanini.">
+  <meta property="og:description" content="Especialista em Android (Kotlin), iOS (Swift) e Angular. Atuação em plataformas bancárias de alta escala no PicPay e Banco Original.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://paulobragajr.github.io">
+  <meta property="og:image" content="https://github.com/paulobragajr.png">
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,55 +26,211 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           },
           colors: {
             brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
               400: '#34d399',
               500: '#10b981',
               600: '#059669',
+            },
+            surface: {
+              base: '#07090e',
+              card: '#0f141f',
+              glass: 'rgba(15, 20, 31, 0.72)',
             }
           }
         }
       }
     }
   </script>
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <style>
-    ::selection { background: #10b981; color: #ffffff; }
-    .glass {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+    :root {
+      --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(52, 211, 153, 0.35);
+    }
+
+    ::selection {
+      background: #10b981;
+      color: #07090e;
+    }
+
+    /* Ambient background mesh */
+    .ambient-glow-1 {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(6, 182, 212, 0.06) 45%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      top: 40%;
+      right: -100px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.09) 0%, rgba(59, 130, 246, 0.04) 50%, transparent 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glass Navbar */
+    .nav-glass {
+      background: rgba(7, 9, 14, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      transition: background-color 0.3s var(--ease-apple), border-color 0.3s var(--ease-apple);
+    }
+    .nav-glass[data-scrolled="true"] {
+      background: rgba(7, 9, 14, 0.88);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* 3D Tilt Stage Physics */
+    .stage-container {
+      perspective: 1000px;
+    }
+    .tilt-card {
+      --tilt-x: 0deg;
+      --tilt-y: 0deg;
+      --glare-x: 50%;
+      --glare-y: 20%;
+      transform-style: preserve-3d;
+      transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+      transition: transform 0.5s var(--ease-apple);
+      will-change: transform;
+    }
+    .tilt-card[data-tilting="true"] {
+      transition: transform 0.08s linear;
+    }
+
+    .tilt-glare {
+      background: radial-gradient(circle at var(--glare-x) var(--glare-y), rgba(255, 255, 255, 0.22) 0%, transparent 65%);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .iridescent-border {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.6) 0%, rgba(6, 182, 212, 0.3) 35%, rgba(139, 92, 246, 0.4) 70%, rgba(16, 185, 129, 0.7) 100%);
+      background-size: 200% 200%;
+      animation: shimmerBorder 8s ease infinite;
+    }
+
+    @keyframes shimmerBorder {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Spotlight Card Effect */
+    .spotlight-card {
+      position: relative;
+      background: rgba(15, 20, 31, 0.65);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      transition: transform 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple);
+      overflow: hidden;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(52, 211, 153, 0.28);
+      box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px -8px rgba(16, 185, 129, 0.15);
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.08), transparent 75%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Scroll Reveal */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s var(--ease-apple), transform 0.7s var(--ease-apple);
+    }
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating Badge floating anim */
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-badge-1 {
+      animation: subtleFloat 5s ease-in-out infinite;
+    }
+    .float-badge-2 {
+      animation: subtleFloat 6s ease-in-out 1.2s infinite;
+    }
+
+    /* Custom Toast */
+    #copy-toast {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.35s var(--ease-apple), opacity 0.35s ease;
+    }
+    #copy-toast.show {
+      transform: translateY(0);
+      opacity: 1;
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-300">
+<body class="bg-[#07090e] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/60">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight text-white group">
-        <span id="nav-initials" class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+  <!-- Ambient Glow Backgrounds -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- FIXED NAVBAR (Apple Glass Style) -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-white/[0.06]">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 text-base font-semibold tracking-tight text-white group">
+        <span id="nav-initials" class="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-xs font-mono font-bold text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500/25 transition-all">
           PB
         </span>
-        <span id="nav-name">Paulo Braga</span>
+        <span id="nav-name" class="tracking-tight text-slate-200 group-hover:text-white transition-colors">Paulo Braga</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
-        <a href="#sobre" class="hover:text-emerald-400 transition-colors">Sobre</a>
-        <a href="#pilares" class="hover:text-emerald-400 transition-colors">Engenharia</a>
-        <a href="#stacks" class="hover:text-emerald-400 transition-colors">Stacks</a>
-        <a href="#experiencia" class="hover:text-emerald-400 transition-colors">Trajetória</a>
-        <a href="#projetos" class="hover:text-emerald-400 transition-colors">Projetos</a>
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-400">
+        <a href="#sobre" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Sobre</a>
+        <a href="#impacto" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Impacto</a>
+        <a href="#pilares" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Engenharia</a>
+        <a href="#stacks" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Stacks</a>
+        <a href="#trajetoria" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Carreira</a>
+        <a href="#projetos" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/[0.05] transition-all">Laboratório</a>
       </nav>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5">
+        <button id="nav-copy-email-btn" onclick="copyEmailToClipboard()"
+                class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-300 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.08] hover:border-emerald-500/40 hover:text-emerald-300 transition-all cursor-pointer">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Copiar E-mail</span>
+        </button>
+
         <a id="nav-linkedin" href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all">
+           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 hover:scale-[1.02] transition-all">
           <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
           <span>LinkedIn</span>
         </a>
@@ -79,135 +238,649 @@
     </div>
   </header>
 
-  <main class="pt-28 pb-20 max-w-5xl mx-auto px-6 space-y-24">
+  <main class="relative z-10 pt-28 pb-24 max-w-6xl mx-auto px-6 space-y-28">
 
-    <!-- HERO SECTION -->
-    <section id="sobre" class="space-y-8 pt-4">
-      <div id="hero-badge-container" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-slate-900 border border-slate-800 text-slate-300">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span id="hero-badge">Dev Front Especialista @ PicPay</span>
+    <!-- HERO SECTION (WITH 3D TILT STAGE) -->
+    <section id="sobre" class="pt-6 sm:pt-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-7">
+          
+          <!-- Eyebrow Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-900/90 border border-emerald-500/30 text-emerald-300 shadow-sm backdrop-blur-md">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span id="hero-badge" class="tracking-tight font-semibold">Dev Front Especialista @ PicPay</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-[-0.035em] text-white leading-[1.12]">
+            Construindo plataformas de alta escala com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">engenharia mobile nativa & web</span>.
+          </h1>
+
+          <!-- Hero Subtitle -->
+          <p id="hero-subtitle" class="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl font-normal">
+            Mais de 10 anos de experiência construindo soluções escaláveis e resilientes para o ecossistema financeiro. Especialista em Android (Kotlin), iOS (Swift) e Frontend (Angular), atuando diretamente na arquitetura de produtos críticos no PicPay.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a id="hero-cta-linkedin" href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/35 hover:scale-[1.02]">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Conectar no LinkedIn</span>
+            </a>
+            
+            <button onclick="copyEmailToClipboard()"
+               class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800/90 border border-white/10 hover:border-emerald-500/40 text-slate-200 hover:text-white font-medium text-sm transition-all cursor-pointer">
+              <i data-lucide="copy" class="w-4 h-4 text-emerald-400"></i>
+              <span>Copiar E-mail</span>
+            </button>
+
+            <a id="hero-cta-github" href="https://github.com/paulobragajr" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white text-sm transition-all">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <!-- Quick Global Stats Bar -->
+          <div id="stats-container" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/[0.08]">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Right: Apple-style 3D Tilt Stage -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="stage-container w-full max-w-[360px] sm:max-w-[400px]">
+            <div id="hero-tilt-card" class="tilt-card relative p-[3px] rounded-[32px] iridescent-border shadow-2xl shadow-emerald-500/10">
+              
+              <!-- Card Surface -->
+              <div class="relative rounded-[29px] bg-[#0c1018] overflow-hidden p-6 sm:p-7 border border-white/[0.08] backdrop-blur-xl">
+                
+                <!-- Glare overlay -->
+                <div class="tilt-glare absolute inset-0 rounded-[29px] z-20"></div>
+
+                <!-- Ambient Radial Accent inside card -->
+                <div class="absolute -top-16 -right-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Avatar / Monogram Header -->
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4">
+                  
+                  <div class="relative group">
+                    <!-- Photo Container with glow border -->
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-emerald-400 via-teal-300 to-cyan-500 shadow-xl">
+                      <img id="avatar-img" 
+                           src="https://github.com/paulobragajr.png" 
+                           alt="Paulo Braga Junior"
+                           class="w-full h-full object-cover rounded-[14px] bg-slate-900 transition-transform duration-500 group-hover:scale-105"
+                           onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 120 120\'><rect width=\'120\' height=\'120\' fill=\'%230f172a\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2310b981\' font-family=\'sans-serif\' font-size=\'36\' font-weight=\'bold\'>PB</text></svg>'">
+                    </div>
+                    
+                    <!-- Live Status Pip -->
+                    <div class="absolute -bottom-1 -right-1 flex items-center justify-center w-7 h-7 rounded-full bg-slate-950 border-2 border-[#0c1018] shadow">
+                      <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 class="text-xl font-bold text-white tracking-tight">Paulo Braga Junior</h3>
+                    <p class="text-xs font-mono text-emerald-400 mt-0.5">Dev Front Especialista · Mobile</p>
+                    <p class="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1">
+                      <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                      <span>PicPay · Engenharia de Alta Escala</span>
+                    </p>
+                  </div>
+
+                  <!-- Floating Tech Stack Pills (Cupertino Style) -->
+                  <div class="w-full pt-4 space-y-2 border-t border-white/[0.08] text-left">
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-emerald-500/30 transition-all">
+                      <div class="flex items-center gap-2 text-xs font-medium text-slate-200">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i>
+                        <span>Android Nativo</span>
+                      </div>
+                      <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Kotlin · Compose</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-teal-500/30 transition-all">
+                      <div class="flex items-center gap-2 text-xs font-medium text-slate-200">
+                        <i data-lucide="tablet" class="w-4 h-4 text-teal-300"></i>
+                        <span>iOS Nativo</span>
+                      </div>
+                      <span class="text-[11px] font-mono text-teal-300 bg-teal-500/10 px-2 py-0.5 rounded">Swift · SwiftUI</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-cyan-500/30 transition-all">
+                      <div class="flex items-center gap-2 text-xs font-medium text-slate-200">
+                        <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+                        <span>Frontend Web</span>
+                      </div>
+                      <span class="text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Angular · TypeScript</span>
+                    </div>
+                  </div>
+
+                  <!-- Location & Availability tag -->
+                  <div class="w-full pt-2 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <span class="flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      Ativo no PicPay
+                    </span>
+                    <span>Brasil • Remoto / Híbrido</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="space-y-4 max-w-3xl">
-        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-          Construindo produtos móveis nativos com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">arquitetura de alta escala</span>.
-        </h1>
-        <p id="hero-subtitle" class="text-lg sm:text-xl text-slate-400 leading-relaxed font-normal">
-          Carregando...
+    <!-- BENTO GRID DE IMPACTO DE ENGENHARIA (Augusto Reis Inspired) -->
+    <section id="impacto" class="space-y-6 scroll-mt-24 reveal-item">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          <span>Casos de Impacto & Escala</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Engenharia comprovada em produção</h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+          Resultados de arquitetura e liderança técnica aplicados em produtos com altíssima criticidade e milhões de usuários no varejo financeiro.
         </p>
       </div>
 
-      <div class="flex flex-wrap items-center gap-4 pt-2">
-        <a id="hero-cta-linkedin" href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20">
-          <i data-lucide="send" class="w-4 h-4"></i>
-          <span>Conectar no LinkedIn</span>
-        </a>
-        <a href="#stacks" 
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-medium text-sm transition-all">
-          <i data-lucide="layers" class="w-4 h-4"></i>
-          <span>Explorar Especialidades</span>
-        </a>
-        <a id="hero-cta-github" href="https://github.com/paulobragajr" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 text-slate-400 hover:text-white text-sm transition-all">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub</span>
-        </a>
-      </div>
-
-      <!-- Quick Metrics -->
-      <div id="metrics-container" class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/60">
+      <div id="impact-bento-container" class="grid grid-cols-1 md:grid-cols-12 gap-5 pt-3">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- PILARES DE ENGENHARIA -->
-    <section id="pilares" class="space-y-6 scroll-mt-24">
-      <div class="space-y-1">
-        <h2 id="pillars-tag" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia de Software</h2>
-        <h3 id="pillars-title" class="text-2xl sm:text-3xl font-bold text-white">Arquitetura além de simples telas</h3>
+    <section id="pilares" class="space-y-6 scroll-mt-24 reveal-item">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>Princípios & Arquitetura</span>
+        </div>
+        <h2 id="pillars-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Arquitetura além de simples telas</h2>
+        <p id="pillars-desc" class="text-slate-400 text-sm sm:text-base max-w-2xl">
+          Carregando...
+        </p>
       </div>
-      <p id="pillars-desc" class="text-slate-400 max-w-2xl text-sm sm:text-base">
-        Carregando...
-      </p>
 
-      <div id="pillars-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+      <div id="pillars-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
-    <!-- TECH STACKS -->
-    <section id="stacks" class="space-y-6 scroll-mt-24">
-      <div class="space-y-1">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Tecnologias</h2>
-        <h3 class="text-2xl sm:text-3xl font-bold text-white">Especialidades & Ferramentas</h3>
+    <!-- TECH STACKS (Interativo com Spotlight) -->
+    <section id="stacks" class="space-y-6 scroll-mt-24 reveal-item">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+          <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+          <span>Especialidades Técnicas</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ecossistema & Ferramental</h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+          Stacks aprofundadas ao longo de mais de uma década no desenvolvimento nativo e corporativo.
+        </p>
       </div>
 
-      <div id="stacks-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+      <div id="stacks-container" class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- TRAJETÓRIA & EXPERIÊNCIA -->
-    <section id="experiencia" class="space-y-6 scroll-mt-24">
-      <div class="space-y-1">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Carreira</h2>
-        <h3 class="text-2xl sm:text-3xl font-bold text-white">Trajetória Profissional</h3>
+    <section id="trajetoria" class="space-y-6 scroll-mt-24 reveal-item">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>Trajetória Profissional</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Mais de 10 anos de evolução</h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+          Passagens por fintechs inovadoras, bancos digitais e consultorias globais de tecnologia.
+        </p>
       </div>
 
-      <div id="experiences-container" class="relative border-l border-slate-800 pl-6 ml-3 space-y-10">
+      <div id="experiences-container" class="space-y-4 pt-2">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- LABORATÓRIO / PROJETOS EDUCATIVOS ROADMAP -->
-    <section id="projetos" class="space-y-6 scroll-mt-24">
-      <div class="space-y-1">
-        <h2 id="projects-tag" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Engenharia & Open Source</h2>
-        <h3 id="projects-title" class="text-2xl sm:text-3xl font-bold text-white">Projetos & Lab Educativo</h3>
+    <section id="projetos" class="space-y-6 scroll-mt-24 reveal-item">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400">
+          <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+          <span id="projects-tag">Engenharia & Open Source</span>
+        </div>
+        <h2 id="projects-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Projetos & Lab Educativo</h2>
+        <p id="projects-desc" class="text-slate-400 text-sm sm:text-base max-w-2xl">
+          Carregando...
+        </p>
       </div>
-      <p id="projects-desc" class="text-slate-400 max-w-2xl text-sm sm:text-base">
-        Carregando...
-      </p>
 
-      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
     <!-- CONTATO & FOOTER -->
-    <section class="pt-12 border-t border-slate-800/60 text-center space-y-6">
-      <h3 id="footer-cta-title" class="text-2xl font-bold text-white">Vamos conversar sobre tecnologia?</h3>
-      <p id="footer-cta-subtitle" class="text-slate-400 text-sm max-w-md mx-auto">
-        Estou sempre aberto a trocar ideias sobre arquitetura mobile, desafios de engenharia e novas oportunidades de colaboração.
-      </p>
+    <section class="pt-16 border-t border-white/[0.08] text-center space-y-6 reveal-item">
+      <div class="max-w-xl mx-auto space-y-3">
+        <h3 id="footer-cta-title" class="text-3xl font-extrabold text-white tracking-tight">Vamos conversar sobre tecnologia?</h3>
+        <p id="footer-cta-subtitle" class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Estou sempre aberto a trocar ideias sobre arquitetura mobile nativa, desafios de engenharia em fintechs e novas oportunidades de colaboração.
+        </p>
+      </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-3">
         <a id="footer-linkedin" href="https://www.linkedin.com/in/paulobragajunior/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 text-white text-sm font-semibold transition-all hover:border-emerald-500/40 hover:scale-[1.02]">
           <i data-lucide="linkedin" class="w-4 h-4 text-emerald-400"></i>
           <span>LinkedIn</span>
         </a>
-        <a id="footer-email" href="mailto:junior.braga.dev@gmail.com"
-           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
+
+        <button onclick="copyEmailToClipboard()"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 text-white text-sm font-semibold transition-all hover:border-emerald-500/40 hover:scale-[1.02] cursor-pointer">
           <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
           <span id="footer-email-text">junior.braga.dev@gmail.com</span>
-        </a>
+        </button>
+
         <a id="footer-github" href="https://github.com/paulobragajr" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white text-sm font-medium transition-all">
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/10 text-white text-sm font-semibold transition-all hover:border-emerald-500/40 hover:scale-[1.02]">
           <i data-lucide="github" class="w-4 h-4 text-emerald-400"></i>
           <span>GitHub</span>
         </a>
       </div>
 
-      <div id="footer-copyright" class="pt-12 text-xs text-slate-600">
-        © 2026 Paulo Braga Junior • Hospedado com GitHub Pages
+      <div id="footer-copyright" class="pt-12 text-xs font-mono text-slate-500">
+        © 2026 Paulo Braga Junior • Desenvolvido com foco em alta performance e hospedado no GitHub Pages
       </div>
     </section>
 
   </main>
 
+  <!-- TOAST NOTIFICATION -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/95 border border-emerald-500/50 text-white shadow-2xl backdrop-blur-xl pointer-events-none">
+    <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+      <i data-lucide="check" class="w-4 h-4"></i>
+    </div>
+    <span class="text-xs font-medium text-slate-200">E-mail copiado para a área de transferência!</span>
+  </div>
+
+  <!-- INTERACTIVITY & DATA RENDERING SCRIPT -->  <script id="initial-data" type="application/json">
+{
+  "profile": {
+    "name": "Paulo Braga Junior",
+    "initials": "PB",
+    "role": "Dev Front Especialista | Mobile & Angular",
+    "currentCompany": "PicPay",
+    "location": "Brasil",
+    "statusBadge": "Dev Front Especialista @ PicPay",
+    "avatar": "https://github.com/paulobragajr.png",
+    "heroTitlePrefix": "Construindo plataformas de alta escala com",
+    "heroTitleHighlight": "engenharia mobile nativa & web",
+    "heroSubtitle": "Mais de 10 anos de experiência construindo soluções escaláveis e resilientes para o ecossistema financeiro. Especialista em Android (Kotlin), iOS (Swift) e Frontend (Angular), atuando diretamente na arquitetura de produtos críticos no PicPay.",
+    "contact": {
+      "email": "junior.braga.dev@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/paulobragajunior/",
+      "github": "https://github.com/paulobragajr"
+    }
+  },
+  "globalStats": [
+    {
+      "value": "10+",
+      "label": "Anos no Ecossistema Tech",
+      "highlight": true
+    },
+    {
+      "value": "Dual",
+      "label": "Stack Nativo: Android + iOS",
+      "highlight": false
+    },
+    {
+      "value": "Fintech",
+      "label": "PicPay & Banco Original",
+      "highlight": false
+    },
+    {
+      "value": "Staff / Lead",
+      "label": "Mentoria & Arquitetura",
+      "highlight": false
+    }
+  ],
+  "impactStories": [
+    {
+      "context": "Fintech · Meios de Pagamento",
+      "metric": "Milhões",
+      "metricLabel": "de usuários impactados diariamente",
+      "title": "Arquitetura resiliente para jornadas críticas de Pix e Cartão",
+      "description": "Atuação direta no desenvolvimento e evolução técnica das plataformas do aplicativo de varejo no PicPay e Banco Original. Engenharia focada em idempotência de transações, recuperação inteligente de falhas de rede e garantia de fluidez mesmo sob picos massivos de concorrência.",
+      "accent": "emerald",
+      "tags": ["PicPay", "Banco Original", "Pix", "Cartões", "Resiliência"]
+    },
+    {
+      "context": "Arquitetura · Mobile Nativo",
+      "metric": "Dual-Stack",
+      "metricLabel": "Android Nativo & iOS Nativo",
+      "title": "Unificação de excelência entre ecossistemas Google & Apple",
+      "description": "Domínio aprofundado nos dois mundos nativos: Jetpack Compose, Coroutines e Kotlin no Android, aliado a SwiftUI, Combine e Swift no iOS. Padrões arquiteturais alinhados com Clean Architecture, garantindo consistência entre plataformas sem sacrificar a idiomaticidade de cada sistema operacional.",
+      "accent": "teal",
+      "tags": ["Kotlin", "Swift", "Jetpack Compose", "SwiftUI", "Clean Arch"]
+    },
+    {
+      "context": "Engenharia · Qualidade & Escala",
+      "metric": "60/120fps",
+      "metricLabel": "performance constante & zero frame drops",
+      "title": "Modularização real, profiling contínuo e esteiras de CI/CD",
+      "description": "Desenho de aplicações desacopladas em módulos independentes (Core, Design System e Features) para maximizar o cache de build. Implementação de automações de entrega contínua com Fastlane e GitHub Actions, com foco em redução drástica de Cold Startup Time e mitigação de memory leaks.",
+      "accent": "cyan",
+      "tags": ["Modularização", "CI/CD", "Fastlane", "Profiling", "Performance"]
+    }
+  ],
+  "engineeringPillars": {
+    "tag": "Engenharia de Software",
+    "title": "Arquitetura além de simples telas",
+    "description": "Em produtos financeiros com milhões de transações ativas, a engenharia mobile precisa priorizar manutenção sustentável, isolamento de domínio e resiliência a falhas.",
+    "items": [
+      {
+        "icon": "boxes",
+        "title": "Modularização em Camadas",
+        "description": "Separação rigorosa entre Core, Networking, Design System e Feature Modules para permitir builds ultrarrápidos, trabalho paralelo sem conflitos de merge e isolamento de escopo."
+      },
+      {
+        "icon": "gauge",
+        "title": "Profiling & Alta Performance",
+        "description": "Monitoramento obsessivo de frame drops com meta de 60/120 fps, otimização de Cold e Warm Startup time, gestão enxuta de memória e benchmarking sistemático."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Segurança & Fintech Compliance",
+        "description": "Proteção de dados em repouso e em trânsito, higienização de logs sensíveis, biometria avançada e comunicação com backends financeiros de missão crítica."
+      }
+    ]
+  },
+  "stacks": [
+    {
+      "title": "Android Nativo",
+      "subtitle": "Ecossistema moderno Google",
+      "icon": "smartphone",
+      "color": "emerald",
+      "items": [
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Coroutines & Flow",
+        "Clean Architecture",
+        "MVI / MVVM",
+        "Hilt / Koin",
+        "Room Database",
+        "Gradle & Convention Plugins"
+      ]
+    },
+    {
+      "title": "iOS Nativo",
+      "subtitle": "Ecossistema moderno Apple",
+      "icon": "tablet",
+      "color": "teal",
+      "items": [
+        "Swift",
+        "SwiftUI",
+        "Combine",
+        "Async / Await",
+        "Clean Swift / MVVM-C",
+        "Swift Package Manager (SPM)",
+        "XCTest & Snapshot Testing",
+        "CoreData"
+      ]
+    },
+    {
+      "title": "Frontend & Web Corporativa",
+      "subtitle": "Sistemas de alta complexidade",
+      "icon": "cpu",
+      "color": "cyan",
+      "items": [
+        "Angular",
+        "AngularJS",
+        "TypeScript",
+        "RxJS",
+        "React Native",
+        "Ionic Framework",
+        "HTML5 / SCSS",
+        "Micro-frontends"
+      ]
+    },
+    {
+      "title": "Liderança Técnica & DevOps",
+      "subtitle": "Qualidade, escala e cultura de engenharia",
+      "icon": "git-branch",
+      "color": "emerald",
+      "items": [
+        "Liderança Técnica",
+        "Code Review Rigoroso",
+        "Mentoria de Desenvolvedores",
+        "CI / CD Mobile",
+        "Fastlane",
+        "GitHub Actions",
+        "Metodologias Ágeis"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "role": "Dev Front Especialista | Mobile & Angular",
+      "company": "PicPay",
+      "segment": "Fintech & Banking Varejo",
+      "period": "Jan de 2023 – Presente",
+      "current": true,
+      "description": "Liderança técnica e desenvolvimento no ecossistema de varejo do PicPay. Atuação direta na plataforma de atendimento dos clientes do banco e na arquitetura de integrações críticas do aplicativo de varejo (Cartão, Conta e Pix). Mentoria ativa a desenvolvedores do time, promovendo boas práticas de arquitetura e consistência técnica.",
+      "tags": ["Android (Kotlin)", "iOS (Swift)", "Angular", "Pix", "Banking", "Liderança"]
+    },
+    {
+      "role": "Android Specialist / Mobile Specialist",
+      "company": "Banco Original",
+      "segment": "Banking Digital & Meios de Pagamento",
+      "period": "Set de 2021 – Abr de 2023",
+      "current": false,
+      "description": "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, arquitetando novas features financeiras, otimizando performance e implementando monitoramento contínuo em tempo real para prevenção de falhas em produção.",
+      "tags": ["Android Nativo", "Kotlin", "Clean Architecture", "Pix", "Cashback"]
+    },
+    {
+      "role": "Mobile Development Leader & Developer",
+      "company": "Stefanini Brasil",
+      "segment": "Consultoria Global em TI",
+      "period": "Set de 2018 – Set de 2021",
+      "current": false,
+      "description": "Liderança de projetos mobile corporativos com metodologias ágeis, acompanhamento e reporte de resultados executivos. Ampla atuação em implantação de arquiteturas modulares, esteiras completas de CI/CD, revisão de código (Code Review) e desenvolvimento multiplataforma em Android (Kotlin/Java), iOS (Swift), React Native e Angular.",
+      "tags": ["Liderança de Projetos", "CI/CD", "Code Review", "Android", "iOS", "Angular"]
+    },
+    {
+      "role": "Mobile & Web Developer",
+      "company": "SpeedWay Tecnologia da Informação",
+      "segment": "Produtos Digitais & Consultoria",
+      "period": "Jan de 2017 – Set de 2018",
+      "current": false,
+      "description": "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java.",
+      "tags": ["Android", "iOS", "Ionic", "Java Web"]
+    },
+    {
+      "role": "Mobile Developer",
+      "company": "Stefanini",
+      "segment": "Início da Trajetória Mobile",
+      "period": "Jul de 2015 – Jan de 2017",
+      "current": false,
+      "description": "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#), criando a base sólida em computação móvel nativa.",
+      "tags": ["Android (Java)", "Windows Phone", "Mobile Fundamentals"]
+    }
+  ],
+  "projects": {
+    "tag": "Engenharia & Open Source",
+    "title": "Projetos & Lab Educativo",
+    "description": "Iniciativas focadas em compartilhar padrões de arquitetura de nível de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
+    "items": [
+      {
+        "title": "KMP Architecture Lab",
+        "status": "Em Desenvolvimento",
+        "statusColor": "emerald",
+        "description": "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) utilizando Kotlin Multiplatform."
+      },
+      {
+        "title": "Modular Android Starter",
+        "status": "Em Desenvolvimento",
+        "statusColor": "teal",
+        "description": "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna de dependências, linters rigorosos e CI automatizado com GitHub Actions."
+      },
+      {
+        "title": "Design System Showcase",
+        "status": "Planejado",
+        "statusColor": "cyan",
+        "description": "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco primário em acessibilidade nativa (VoiceOver & TalkBack)."
+      }
+    ]
+  },
+  "footer": {
+    "ctaTitle": "Vamos conversar sobre tecnologia?",
+    "ctaSubtitle": "Estou sempre aberto a trocar ideias sobre arquitetura mobile nativa, desafios de engenharia em fintechs e novas oportunidades de colaboração.",
+    "copyright": "© 2026 Paulo Braga Junior • Hospedado com GitHub Pages"
+  }
+}
+
+  </script>
+
   <script>
+    let globalEmail = "junior.braga.dev@gmail.com";
+
+    // Copy Email Toast
+    function copyEmailToClipboard() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(globalEmail).then(showToast).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    }
+
+    function fallbackCopy() {
+      const tempInput = document.createElement("input");
+      tempInput.value = globalEmail;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById("copy-toast");
+      if (!toast) return;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+    // Dynamic 3D Tilt Stage Physics
+    function init3DTilt() {
+      const card = document.getElementById('hero-tilt-card');
+      if (!card) return;
+
+      const stage = card.closest('.stage-container') || card;
+
+      function handleMouseMove(e) {
+        const rect = card.getBoundingClientRect();
+        const cardX = e.clientX - rect.left;
+        const cardY = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((cardY - centerY) / centerY) * -12; // tilt angle max 12 deg
+        const rotateY = ((cardX - centerX) / centerX) * 12;
+
+        const glareX = (cardX / rect.width) * 100;
+        const glareY = (cardY / rect.height) * 100;
+
+        card.setAttribute('data-tilting', 'true');
+        card.style.setProperty('--tilt-x', rotateX.toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-y', rotateY.toFixed(2) + 'deg');
+        card.style.setProperty('--glare-x', glareX.toFixed(1) + '%');
+        card.style.setProperty('--glare-y', glareY.toFixed(1) + '%');
+      }
+
+      function handleMouseLeave() {
+        card.removeAttribute('data-tilting');
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--glare-x', '50%');
+        card.style.setProperty('--glare-y', '20%');
+      }
+
+      stage.addEventListener('mousemove', handleMouseMove);
+      stage.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    // Spotlight cursor effect on cards
+    function initSpotlight() {
+      const cards = document.querySelectorAll('.spotlight-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+
+    // Scroll Reveal with IntersectionObserver
+    function initScrollReveal() {
+      const items = document.querySelectorAll('.reveal-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('revealed'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach(el => observer.observe(el));
+    }
+
+    // Sticky Navbar Scroll Listener
+    function initNavScroll() {
+      const nav = document.getElementById('main-nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+          nav.setAttribute('data-scrolled', 'true');
+        } else {
+          nav.removeAttribute('data-scrolled');
+        }
+      }, { passive: true });
+    }
+
+    // Render Data into DOM
     function renderPage(data) {
       if (!data || !data.profile) return;
       const p = data.profile;
 
       document.title = p.name + ' — ' + p.role;
+      if (p.contact && p.contact.email) {
+        globalEmail = p.contact.email;
+      }
 
       // Navbar
       const elInitials = document.getElementById('nav-initials');
@@ -222,7 +895,7 @@
       if (elBadge) elBadge.textContent = p.statusBadge;
       const elTitle = document.getElementById('hero-title');
       if (elTitle) {
-        elTitle.innerHTML = p.heroTitlePrefix + ' <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">' + p.heroTitleHighlight + '</span>.';
+        elTitle.innerHTML = p.heroTitlePrefix + ' <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300">' + p.heroTitleHighlight + '</span>.';
       }
       const elSubtitle = document.getElementById('hero-subtitle');
       if (elSubtitle) elSubtitle.textContent = p.heroSubtitle;
@@ -231,36 +904,68 @@
       const elHeroGithub = document.getElementById('hero-cta-github');
       if (elHeroGithub && p.contact) elHeroGithub.href = p.contact.github;
 
-      // Metrics
-      const metricsContainer = document.getElementById('metrics-container');
-      if (metricsContainer && data.metrics) {
-        metricsContainer.innerHTML = data.metrics.map(function(m) {
-          const valClass = m.isHighlight ? 'text-emerald-400' : 'text-white';
-          return '<div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">' +
-                 '<div class="text-2xl font-bold ' + valClass + '">' + m.value + '</div>' +
-                 '<div class="text-xs text-slate-400 mt-1 font-medium">' + m.label + '</div>' +
+      // Stats Bar
+      const statsContainer = document.getElementById('stats-container');
+      const statsList = data.globalStats || data.metrics || [];
+      if (statsContainer && statsList.length) {
+        statsContainer.innerHTML = statsList.map(function(st) {
+          const isHl = st.highlight || st.isHighlight;
+          const valClass = isHl ? 'text-emerald-400' : 'text-white';
+          return '<div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-emerald-500/25 transition-all">' +
+                 '<div class="text-2xl sm:text-3xl font-extrabold tracking-tight font-mono ' + valClass + '">' + st.value + '</div>' +
+                 '<div class="text-xs text-slate-400 mt-1 font-medium leading-tight">' + st.label + '</div>' +
+                 '</div>';
+        }).join('');
+      }
+
+      // Bento Grid de Casos de Impacto
+      const bentoContainer = document.getElementById('impact-bento-container');
+      if (bentoContainer && data.impactStories) {
+        bentoContainer.innerHTML = data.impactStories.map(function(story, index) {
+          // Span 12 on mobile; first card spans 12 or 7, second spans 5, third spans 12
+          const colSpan = (index === 0) ? 'md:col-span-12 lg:col-span-7' : (index === 1) ? 'md:col-span-12 lg:col-span-5' : 'md:col-span-12';
+          const tagsHtml = (story.tags || []).map(function(t) {
+            return '<span class="px-2.5 py-1 text-xs rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.06] font-mono">' + t + '</span>';
+          }).join('');
+
+          const accentColor = story.accent === 'teal' ? '#14b8a6' : story.accent === 'cyan' ? '#06b6d4' : '#10b981';
+
+          return '<div class="' + colSpan + ' spotlight-card p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group">' +
+                 '  <div style="background: radial-gradient(circle, ' + accentColor + '22 0%, transparent 70%); position: absolute; right: -20%; bottom: -30%; width: 75%; aspect-ratio: 1; pointer-events: none; border-radius: 50%;"></div>' +
+                 '  <div class="space-y-4 relative z-10">' +
+                 '    <div class="flex items-center justify-between">' +
+                 '      <span class="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">' + story.context + '</span>' +
+                 '    </div>' +
+                 '    <div class="pt-2">' +
+                 '      <div class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight font-mono leading-none group-hover:text-emerald-400 transition-colors">' + story.metric + '</div>' +
+                 '      <div class="text-sm font-medium text-slate-400 mt-2">' + story.metricLabel + '</div>' +
+                 '    </div>' +
+                 '    <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight pt-2 leading-snug">' + story.title + '</h3>' +
+                 '    <p class="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal max-w-2xl">' + story.description + '</p>' +
+                 '  </div>' +
+                 '  <div class="flex flex-wrap gap-2 pt-6 relative z-10">' + tagsHtml + '</div>' +
                  '</div>';
         }).join('');
       }
 
       // Pillars
       const ep = data.engineeringPillars || {};
-      const elPTag = document.getElementById('pillars-tag');
-      if (elPTag) elPTag.textContent = ep.tag || '';
       const elPTitle = document.getElementById('pillars-title');
-      if (elPTitle) elPTitle.textContent = ep.title || '';
+      if (elPTitle && ep.title) elPTitle.textContent = ep.title;
       const elPDesc = document.getElementById('pillars-desc');
-      if (elPDesc) elPDesc.textContent = ep.description || '';
+      if (elPDesc && ep.description) elPDesc.textContent = ep.description;
 
       const pillarsContainer = document.getElementById('pillars-container');
       if (pillarsContainer && ep.items) {
         pillarsContainer.innerHTML = ep.items.map(function(pillar) {
-          return '<div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 transition-all space-y-3">' +
-                 '<div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">' +
-                 '<i data-lucide="' + pillar.icon + '" class="w-5 h-5"></i>' +
-                 '</div>' +
-                 '<h4 class="text-lg font-bold text-white">' + pillar.title + '</h4>' +
-                 '<p class="text-sm text-slate-400 leading-relaxed">' + pillar.description + '</p>' +
+          return '<div class="spotlight-card p-7 flex flex-col justify-between space-y-4">' +
+                 '  <div class="space-y-4 relative z-10">' +
+                 '    <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">' +
+                 '      <i data-lucide="' + pillar.icon + '" class="w-6 h-6"></i>' +
+                 '    </div>' +
+                 '    <h4 class="text-lg font-bold text-white tracking-tight">' + pillar.title + '</h4>' +
+                 '    <p class="text-sm text-slate-300/85 leading-relaxed">' + pillar.description + '</p>' +
+                 '  </div>' +
                  '</div>';
         }).join('');
       }
@@ -270,37 +975,51 @@
       if (stacksContainer && data.stacks) {
         stacksContainer.innerHTML = data.stacks.map(function(st) {
           const chips = (st.items || []).map(function(item) {
-            return '<span class="px-2.5 py-1 text-xs rounded-md bg-slate-800 text-slate-200 font-mono">' + item + '</span>';
+            return '<span class="px-2.5 py-1 text-xs rounded-md bg-white/[0.04] text-slate-200 border border-white/[0.06] font-mono hover:border-emerald-500/40 hover:text-white transition-all">' + item + '</span>';
           }).join('');
-          return '<div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 space-y-4">' +
-                 '<div class="flex items-center gap-3">' +
-                 '<div class="w-9 h-9 rounded-lg bg-' + st.color + '-500/10 flex items-center justify-center text-' + st.color + '-400">' +
-                 '<i data-lucide="' + st.icon + '" class="w-5 h-5"></i>' +
-                 '</div>' +
-                 '<div>' +
-                 '<h4 class="text-base font-bold text-white">' + st.title + '</h4>' +
-                 '<p class="text-xs text-slate-400">' + st.subtitle + '</p>' +
-                 '</div>' +
-                 '</div>' +
-                 '<div class="flex flex-wrap gap-2 pt-1">' + chips + '</div>' +
+
+          return '<div class="spotlight-card p-7 space-y-5">' +
+                 '  <div class="flex items-center gap-3.5 relative z-10">' +
+                 '    <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center text-emerald-400">' +
+                 '      <i data-lucide="' + st.icon + '" class="w-5 h-5"></i>' +
+                 '    </div>' +
+                 '    <div>' +
+                 '      <h4 class="text-lg font-bold text-white tracking-tight">' + st.title + '</h4>' +
+                 '      <p class="text-xs text-slate-400">' + st.subtitle + '</p>' +
+                 '    </div>' +
+                 '  </div>' +
+                 '  <div class="flex flex-wrap gap-2 pt-1 relative z-10">' + chips + '</div>' +
                  '</div>';
         }).join('');
       }
 
-      // Experiences (Timeline)
+      // Experiences (Timeline Redesenhada em Cards)
       const expContainer = document.getElementById('experiences-container');
       if (expContainer && data.experiences) {
         expContainer.innerHTML = data.experiences.map(function(exp) {
-          const dotClass = exp.current ? 'bg-emerald-400' : 'bg-slate-700';
-          const badgeClass = exp.current ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-800/60 text-slate-400 font-mono';
-          return '<div class="relative space-y-2">' +
-                 '<div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full ' + dotClass + ' border-4 border-slate-950"></div>' +
-                 '<div class="flex flex-wrap items-center justify-between gap-2">' +
-                 '<h4 class="text-lg font-bold text-white">' + exp.role + '</h4>' +
-                 '<span class="text-xs font-semibold px-2.5 py-1 rounded-full ' + badgeClass + '">' + exp.period + '</span>' +
-                 '</div>' +
-                 '<div class="text-sm font-medium text-slate-400">' + exp.company + ' • ' + exp.segment + '</div>' +
-                 '<p class="text-sm text-slate-300 leading-relaxed pt-1">' + exp.description + '</p>' +
+          const isCurrent = exp.current;
+          const currentBadge = isCurrent 
+            ? '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>' + exp.period + '</span>'
+            : '<span class="text-xs font-mono font-medium text-slate-400 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">' + exp.period + '</span>';
+
+          const tagsHtml = (exp.tags || []).map(function(t) {
+            return '<span class="px-2 py-0.5 text-[11px] rounded bg-white/[0.03] text-slate-400 border border-white/[0.05] font-mono">' + t + '</span>';
+          }).join('');
+
+          return '<div class="spotlight-card p-6 sm:p-7 space-y-3.5 relative">' +
+                 '  <div class="flex flex-wrap items-center justify-between gap-3 relative z-10">' +
+                 '    <div>' +
+                 '      <h4 class="text-lg sm:text-xl font-bold text-white tracking-tight">' + exp.role + '</h4>' +
+                 '      <div class="text-sm font-semibold text-emerald-400 mt-0.5 flex items-center gap-2">' +
+                 '        <span>' + exp.company + '</span>' +
+                 '        <span class="text-slate-600">•</span>' +
+                 '        <span class="text-slate-400 font-normal text-xs sm:text-sm">' + exp.segment + '</span>' +
+                 '      </div>' +
+                 '    </div>' +
+                 '    <div>' + currentBadge + '</div>' +
+                 '  </div>' +
+                 '  <p class="text-sm text-slate-300 leading-relaxed font-normal relative z-10">' + exp.description + '</p>' +
+                 '  <div class="flex flex-wrap gap-1.5 pt-1 relative z-10">' + tagsHtml + '</div>' +
                  '</div>';
         }).join('');
       }
@@ -308,21 +1027,25 @@
       // Projects
       const pr = data.projects || {};
       const elPrTag = document.getElementById('projects-tag');
-      if (elPrTag) elPrTag.textContent = pr.tag || '';
+      if (elPrTag && pr.tag) elPrTag.textContent = pr.tag;
       const elPrTitle = document.getElementById('projects-title');
-      if (elPrTitle) elPrTitle.textContent = pr.title || '';
+      if (elPrTitle && pr.title) elPrTitle.textContent = pr.title;
       const elPrDesc = document.getElementById('projects-desc');
-      if (elPrDesc) elPrDesc.textContent = pr.description || '';
+      if (elPrDesc && pr.description) elPrDesc.textContent = pr.description;
 
       const projectsContainer = document.getElementById('projects-container');
       if (projectsContainer && pr.items) {
         projectsContainer.innerHTML = pr.items.map(function(item) {
-          return '<div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3 relative overflow-hidden group">' +
-                 '<div class="inline-flex items-center gap-1.5 text-xs font-medium text-' + item.statusColor + '-400 bg-' + item.statusColor + '-500/10 px-2 py-0.5 rounded">' +
-                 '<span>' + item.status + '</span>' +
-                 '</div>' +
-                 '<h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">' + item.title + '</h4>' +
-                 '<p class="text-xs text-slate-400 leading-relaxed">' + item.description + '</p>' +
+          const statusBg = item.statusColor === 'teal' ? 'bg-teal-500/10 text-teal-400 border-teal-500/20' : item.statusColor === 'cyan' ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+
+          return '<div class="spotlight-card p-6 flex flex-col justify-between space-y-4 group">' +
+                 '  <div class="space-y-3 relative z-10">' +
+                 '    <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded-md border ' + statusBg + '">' +
+                 '      <span>' + item.status + '</span>' +
+                 '    </div>' +
+                 '    <h4 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors tracking-tight">' + item.title + '</h4>' +
+                 '    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">' + item.description + '</p>' +
+                 '  </div>' +
                  '</div>';
         }).join('');
       }
@@ -330,27 +1053,47 @@
       // Footer
       const f = data.footer || {};
       const elFCta = document.getElementById('footer-cta-title');
-      if (elFCta) elFCta.textContent = f.ctaTitle || '';
+      if (elFCta && f.ctaTitle) elFCta.textContent = f.ctaTitle;
       const elFSub = document.getElementById('footer-cta-subtitle');
-      if (elFSub) elFSub.textContent = f.ctaSubtitle || '';
+      if (elFSub && f.ctaSubtitle) elFSub.textContent = f.ctaSubtitle;
       const elFCopy = document.getElementById('footer-copyright');
-      if (elFCopy) elFCopy.textContent = f.copyright || '';
+      if (elFCopy && f.copyright) elFCopy.textContent = f.copyright;
       const elFEmail = document.getElementById('footer-email-text');
       if (elFEmail && p.contact) elFEmail.textContent = p.contact.email;
 
+      // Re-initialize Lucide Icons and Spotlight
       if (window.lucide && typeof lucide.createIcons === 'function') {
         lucide.createIcons();
       }
+      initSpotlight();
+      initScrollReveal();
     }
 
     async function init() {
+      init3DTilt();
+      initNavScroll();
+
+      // Render immediately from embedded initial-data (works offline & with file:// protocol)
+      const inlineEl = document.getElementById('initial-data');
+      if (inlineEl) {
+        try {
+          const initialData = JSON.parse(inlineEl.textContent);
+          renderPage(initialData);
+        } catch (e) {
+          console.warn('Fallback JSON parsing failed', e);
+        }
+      }
+
+      // Dynamically fetch freshest data.json when served over HTTP/HTTPS (GitHub Pages)
       try {
         const res = await fetch('./data.json?v=' + Date.now());
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        renderPage(data);
+        if (res.ok) {
+          const freshData = await res.json();
+          renderPage(freshData);
+        }
       } catch (err) {
-        console.error('Falha ao carregar data.json:', err);
+        // Normal when opening via file:/// directly in browser
+        console.log('Modo local ou estático ativo.');
       }
     }
 
@@ -362,3 +1105,4 @@
   </script>
 </body>
 </html>
+
