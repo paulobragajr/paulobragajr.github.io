@@ -133,11 +133,7 @@
       "segment": "Fintech & Banking Varejo",
       "period": "Jan de 2023 – Presente",
       "current": true,
-      "bullets": [
-        "Liderança técnica e atuação direta no ecossistema de varejo do PicPay e na plataforma de atendimento dos clientes do banco.",
-        "Desenvolvimento e arquitetura de integrações críticas no aplicativo de varejo (Cartão, Conta Digital e Pix).",
-        "Mentoria contínua a desenvolvedores do time, disseminando boas práticas de arquitetura modular, manutenibilidade e consistência técnica."
-      ],
+      "description": "Liderança técnica e desenvolvimento no ecossistema de varejo do PicPay. Atuação direta na plataforma de atendimento dos clientes do banco e na arquitetura de integrações críticas do aplicativo de varejo (Cartão, Conta e Pix). Mentoria ativa a desenvolvedores do time, promovendo boas práticas de arquitetura e consistência técnica.",
       "tags": ["Android (Kotlin)", "iOS (Swift)", "Angular", "Pix", "Banking", "Liderança"]
     },
     {
@@ -146,11 +142,7 @@
       "segment": "Banking Digital & Meios de Pagamento",
       "period": "Set de 2021 – Abr de 2023",
       "current": false,
-      "bullets": [
-        "Atuação no aplicativo de varejo do Banco Original (Pix, Conta Digital, Cashback e Empréstimos).",
-        "Engenharia e arquitetura focadas em Android Nativo (Kotlin/Java) e módulos híbridos com Clean Architecture.",
-        "Desenvolvimento de novas funcionalidades financeiras, refatoração de código legado e monitoramento contínuo em produção para mitigação de falhas."
-      ],
+      "description": "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, arquitetando novas features financeiras, otimizando performance e implementando monitoramento contínuo em tempo real para prevenção de falhas em produção.",
       "tags": ["Android Nativo", "Kotlin", "Clean Architecture", "Pix", "Cashback"]
     },
     {
@@ -159,11 +151,7 @@
       "segment": "Consultoria Global em TI",
       "period": "Set de 2018 – Set de 2021",
       "current": false,
-      "bullets": [
-        "Liderança técnica de projetos mobile corporativos utilizando metodologias ágeis e reporte executivo a clientes e gestores.",
-        "Implantação de arquiteturas modulares escaláveis, revisão rigorosa de código (Code Review) e automação de esteiras de CI/CD.",
-        "Desenvolvimento multiplataforma e nativo em Android (Kotlin/Java), iOS (Swift), React Native e Angular."
-      ],
+      "description": "Liderança de projetos mobile corporativos com metodologias ágeis, acompanhamento e reporte de resultados executivos. Ampla atuação em implantação de arquiteturas modulares, esteiras completas de CI/CD, revisão de código (Code Review) e desenvolvimento multiplataforma em Android (Kotlin/Java), iOS (Swift), React Native e Angular.",
       "tags": ["Liderança de Projetos", "CI/CD", "Code Review", "Android", "iOS", "Angular"]
     },
     {
@@ -172,10 +160,7 @@
       "segment": "Produtos Digitais & Consultoria",
       "period": "Jan de 2017 – Set de 2018",
       "current": false,
-      "bullets": [
-        "Desenvolvimento de aplicações móveis nativas e híbridas em Android (Java), iOS (Swift) e Ionic.",
-        "Sustentação e engenharia de sistemas corporativos web em Java."
-      ],
+      "description": "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java.",
       "tags": ["Android", "iOS", "Ionic", "Java Web"]
     },
     {
@@ -184,10 +169,7 @@
       "segment": "Início da Trajetória Mobile",
       "period": "Jul de 2015 – Jan de 2017",
       "current": false,
-      "bullets": [
-        "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#).",
-        "Construção de base sólida em computação móvel nativa, integração com APIs REST e ciclo de vida de aplicações."
-      ],
+      "description": "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#), criando a base sólida em computação móvel nativa.",
       "tags": ["Android (Java)", "Windows Phone", "Mobile Fundamentals"]
     }
   ],
