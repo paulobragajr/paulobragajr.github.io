@@ -38,35 +38,6 @@
       "highlight": false
     }
   ],
-  "impactStories": [
-    {
-      "context": "Fintech · Meios de Pagamento",
-      "metric": "Milhões",
-      "metricLabel": "de usuários impactados diariamente",
-      "title": "Arquitetura resiliente para jornadas críticas de Pix e Cartão",
-      "description": "Atuação direta no desenvolvimento e evolução técnica das plataformas do aplicativo de varejo no PicPay e Banco Original. Engenharia focada em idempotência de transações, recuperação inteligente de falhas de rede e garantia de fluidez mesmo sob picos massivos de concorrência.",
-      "accent": "emerald",
-      "tags": ["PicPay", "Banco Original", "Pix", "Cartões", "Resiliência"]
-    },
-    {
-      "context": "Arquitetura · Mobile Nativo",
-      "metric": "Dual-Stack",
-      "metricLabel": "Android Nativo & iOS Nativo",
-      "title": "Unificação de excelência entre ecossistemas Google & Apple",
-      "description": "Domínio aprofundado nos dois mundos nativos: Jetpack Compose, Coroutines e Kotlin no Android, aliado a SwiftUI, Combine e Swift no iOS. Padrões arquiteturais alinhados com Clean Architecture, garantindo consistência entre plataformas sem sacrificar a idiomaticidade de cada sistema operacional.",
-      "accent": "teal",
-      "tags": ["Kotlin", "Swift", "Jetpack Compose", "SwiftUI", "Clean Arch"]
-    },
-    {
-      "context": "Engenharia · Qualidade & Escala",
-      "metric": "60/120fps",
-      "metricLabel": "performance constante & zero frame drops",
-      "title": "Modularização real, profiling contínuo e esteiras de CI/CD",
-      "description": "Desenho de aplicações desacopladas em módulos independentes (Core, Design System e Features) para maximizar o cache de build. Implementação de automações de entrega contínua com Fastlane e GitHub Actions, com foco em redução drástica de Cold Startup Time e mitigação de memory leaks.",
-      "accent": "cyan",
-      "tags": ["Modularização", "CI/CD", "Fastlane", "Profiling", "Performance"]
-    }
-  ],
   "engineeringPillars": {
     "tag": "Engenharia de Software",
     "title": "Arquitetura além de simples telas",
@@ -162,7 +133,11 @@
       "segment": "Fintech & Banking Varejo",
       "period": "Jan de 2023 – Presente",
       "current": true,
-      "description": "Liderança técnica e desenvolvimento no ecossistema de varejo do PicPay. Atuação direta na plataforma de atendimento dos clientes do banco e na arquitetura de integrações críticas do aplicativo de varejo (Cartão, Conta e Pix). Mentoria ativa a desenvolvedores do time, promovendo boas práticas de arquitetura e consistência técnica.",
+      "bullets": [
+        "Liderança técnica e atuação direta no ecossistema de varejo do PicPay e na plataforma de atendimento dos clientes do banco.",
+        "Desenvolvimento e arquitetura de integrações críticas no aplicativo de varejo (Cartão, Conta Digital e Pix).",
+        "Mentoria contínua a desenvolvedores do time, disseminando boas práticas de arquitetura modular, manutenibilidade e consistência técnica."
+      ],
       "tags": ["Android (Kotlin)", "iOS (Swift)", "Angular", "Pix", "Banking", "Liderança"]
     },
     {
@@ -171,7 +146,11 @@
       "segment": "Banking Digital & Meios de Pagamento",
       "period": "Set de 2021 – Abr de 2023",
       "current": false,
-      "description": "Atuação no aplicativo de varejo (Original: Pix, Digital, Cashback e Empréstimos). Desenvolvimento focado em Android Nativo e híbrido, arquitetando novas features financeiras, otimizando performance e implementando monitoramento contínuo em tempo real para prevenção de falhas em produção.",
+      "bullets": [
+        "Atuação no aplicativo de varejo do Banco Original (Pix, Conta Digital, Cashback e Empréstimos).",
+        "Engenharia e arquitetura focadas em Android Nativo (Kotlin/Java) e módulos híbridos com Clean Architecture.",
+        "Desenvolvimento de novas funcionalidades financeiras, refatoração de código legado e monitoramento contínuo em produção para mitigação de falhas."
+      ],
       "tags": ["Android Nativo", "Kotlin", "Clean Architecture", "Pix", "Cashback"]
     },
     {
@@ -180,7 +159,11 @@
       "segment": "Consultoria Global em TI",
       "period": "Set de 2018 – Set de 2021",
       "current": false,
-      "description": "Liderança de projetos mobile corporativos com metodologias ágeis, acompanhamento e reporte de resultados executivos. Ampla atuação em implantação de arquiteturas modulares, esteiras completas de CI/CD, revisão de código (Code Review) e desenvolvimento multiplataforma em Android (Kotlin/Java), iOS (Swift), React Native e Angular.",
+      "bullets": [
+        "Liderança técnica de projetos mobile corporativos utilizando metodologias ágeis e reporte executivo a clientes e gestores.",
+        "Implantação de arquiteturas modulares escaláveis, revisão rigorosa de código (Code Review) e automação de esteiras de CI/CD.",
+        "Desenvolvimento multiplataforma e nativo em Android (Kotlin/Java), iOS (Swift), React Native e Angular."
+      ],
       "tags": ["Liderança de Projetos", "CI/CD", "Code Review", "Android", "iOS", "Angular"]
     },
     {
@@ -189,7 +172,10 @@
       "segment": "Produtos Digitais & Consultoria",
       "period": "Jan de 2017 – Set de 2018",
       "current": false,
-      "description": "Desenvolvimento de aplicações mobile nativas e híbridas em Android (Java), iOS (Swift) e Ionic, além de sistemas web corporativos em Java.",
+      "bullets": [
+        "Desenvolvimento de aplicações móveis nativas e híbridas em Android (Java), iOS (Swift) e Ionic.",
+        "Sustentação e engenharia de sistemas corporativos web em Java."
+      ],
       "tags": ["Android", "iOS", "Ionic", "Java Web"]
     },
     {
@@ -198,35 +184,13 @@
       "segment": "Início da Trajetória Mobile",
       "period": "Jul de 2015 – Jan de 2017",
       "current": false,
-      "description": "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#), criando a base sólida em computação móvel nativa.",
+      "bullets": [
+        "Desenvolvimento de aplicativos móveis nativos com foco em Android (Java) e Windows Phone (C#).",
+        "Construção de base sólida em computação móvel nativa, integração com APIs REST e ciclo de vida de aplicações."
+      ],
       "tags": ["Android (Java)", "Windows Phone", "Mobile Fundamentals"]
     }
   ],
-  "projects": {
-    "tag": "Engenharia & Open Source",
-    "title": "Projetos & Lab Educativo",
-    "description": "Iniciativas focadas em compartilhar padrões de arquitetura de nível de produção, boas práticas de engenharia e soluções para problemas reais de escala.",
-    "items": [
-      {
-        "title": "KMP Architecture Lab",
-        "status": "Em Desenvolvimento",
-        "statusColor": "emerald",
-        "description": "Compartilhamento de regras de negócio, offline-cache e networking entre Jetpack Compose (Android) e SwiftUI (iOS) utilizando Kotlin Multiplatform."
-      },
-      {
-        "title": "Modular Android Starter",
-        "status": "Em Desenvolvimento",
-        "statusColor": "teal",
-        "description": "Boilerplate modular de nível corporativo com Gradle Convention Plugins, injeção moderna de dependências, linters rigorosos e CI automatizado com GitHub Actions."
-      },
-      {
-        "title": "Design System Showcase",
-        "status": "Planejado",
-        "statusColor": "cyan",
-        "description": "Biblioteca de componentes de interface consistentes em Compose e SwiftUI com tokens sincronizados e foco primário em acessibilidade nativa (VoiceOver & TalkBack)."
-      }
-    ]
-  },
   "footer": {
     "ctaTitle": "Vamos conversar sobre tecnologia?",
     "ctaSubtitle": "Estou sempre aberto a trocar ideias sobre arquitetura mobile nativa, desafios de engenharia em fintechs e novas oportunidades de colaboração.",
